@@ -1,0 +1,55 @@
+body{
+  background-color: #898576;
+}
+p{
+  color: #ffffff;
+}
+
+li {
+  list-style-type: none;
+  }
+
+.center {
+  text-align: center; 
+}
+
+.contenedor{
+  display: flex;
+
+}
+
+.txt{
+  margin-top: 250px;
+  margin-left: -200px;
+}
+
+.img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.lineaV {
+  width: 2px;
+  height: 700px;
+  margin-left: 85px;
+  background-color: black; 
+}
+
+.img2{
+  margin-left: 80px;
+  width: 550px;
+  height: 300px;
+}
+
+.txt2{
+  margin-top: 10px;
+  margin-right: 00px;
+}
+
+.txt3{
+  margin-top: 20px;
+  margin-left: 200px;
+  width: 600px;
+  height: 300px;
+}
