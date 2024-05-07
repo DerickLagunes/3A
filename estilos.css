@@ -1,0 +1,54 @@
+/* Estilos Básicos */
+body {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('img/sis.jpg'); /* Ajusta esto a tu ruta de imagen */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Opcional, para que la imagen no se desplace con el scroll */
+    text-align: center;
+}
+
+header {
+    background-color: rgba(204, 216, 43, 0.85); /* Ajuste de opacidad para mejorar la legibilidad */
+    padding: 15px;
+    color: #a19f13d0;
+}
+
+nav {
+    background-color: rgba(161, 159, 19, 0.85);
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+main {
+    padding: 20px;
+    background-color: rgba(244, 244, 244, 0.85);
+    color: #0e0d0ad0;
+}
+
+footer {
+    background-color: rgba(161, 159, 19, 0.85);
+    color: white;
+    padding: 18px;
+}
+img {
+    display: block;
+    margin: 0 auto;  /* Centra la imagen horizontalmente */
+    max-width: 100%; /* Hace que la imagen sea responsiva */
+    height: auto;    /* Mantiene la proporción de la imagen al escalar */
+}
