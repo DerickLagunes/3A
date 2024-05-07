@@ -1,0 +1,12 @@
+.xd{
+    font-size: larger;
+}
+.xd4{
+    background-color: rgb(241, 243, 194);
+    font-size: larger;
+}
+
+#img:hover{
+    rotate: 360deg;
+    transition: 1000ms;
+}
