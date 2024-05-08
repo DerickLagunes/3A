@@ -12,3 +12,4 @@
 >>>>>>> 46e1ae45fe6467b73f491e0d2cae5d177c1fab8f
 20233tn107 Garcia Quiroz Gaspar Andres
 20233tn078 Sanchez Saldaña Jose Manuel
+20233tn104 Villanueva Miranda Bigvai Jatniel
