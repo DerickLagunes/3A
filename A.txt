@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 20223tn044 Balmaceda Miranda Erik
+=======
+20233tn059 González Hernández Juan Enrique
+
+>>>>>>> 79827abff41dd638ef707f9b753e7ed8b673184c
