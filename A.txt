@@ -10,3 +10,4 @@
 20233tn105 Rodríguez Torres Rocio
 20233tn060 Teja Carvajal Erick Humberto
 >>>>>>> 46e1ae45fe6467b73f491e0d2cae5d177c1fab8f
+20233tn107 Garcia Quiroz Gaspar Andres
