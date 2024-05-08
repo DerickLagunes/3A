@@ -1,3 +1,22 @@
+<<<<<<< HEAD
+20223tn044 Balmaceda Miranda Erik
+=======
 20233tn059 González Hernández Juan Enrique
-20233tn105 Rodríguez Torres Rocio
+<<<<<<< HEAD
 
+>>>>>>> 79827abff41dd638ef707f9b753e7ed8b673184c
+=======
+20233tn086 Ortega Chavarria Angel Ivan
+20233tn105 Rodríguez Torres Rocio
+20233tn060 Teja Carvajal Erick Humberto
+>>>>>>> 46e1ae45fe6467b73f491e0d2cae5d177c1fab8f
+20233tn107 Garcia Quiroz Gaspar Andres
+20233tn078 Sanchez Saldaña Jose Manuel
+20233tn104 Villanueva Miranda Bigvai Jatniel
+20233tn058 Ocampo Martinez Angel Daniel
+20233tn097 Jimenez Ureña Angel Sebastian 
+20233tn071 Vargas Ledesma Paula 
+20233tn079 Medina Villa Abril Aidee
+20233tn087 Ruiz Santos Orlando
+20233tn083 Delgado Heredia Estefany Alexa
+20233tn072 Vargas Ledesma Piero Leonardo 
