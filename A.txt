@@ -30,3 +30,4 @@
 20233tn067 Diaz Barroso Juan Jose
 .
 >>>>>>> 2286ba2df0ff82da2c58beae74e91858c8418dc4
+20233tn064 Pichardo Nava Johanna Montserrat
