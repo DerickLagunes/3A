@@ -24,4 +24,9 @@
 20233tn068 Marquez Bailon Elias Manuel
 20233tn091 Gutierrez Garcia Christopher 
 20233tn093 Chavez Martinez Adrian Uxue
+<<<<<<< HEAD
 20233tn106 Garcia Gonzalez Antonio
+=======
+20233tn067 Diaz Barroso Juan Jose
+.
+>>>>>>> 2286ba2df0ff82da2c58beae74e91858c8418dc4
