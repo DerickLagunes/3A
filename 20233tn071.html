@@ -6,15 +6,70 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <style>
+        #carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #carousel-img {
+            width: 300px; /* Ajusta este valor según el tamaño deseado */
+            height: 200px; /* Ajusta este valor según el tamaño deseado */
+            object-fit: cover; /* Esto asegura que las imágenes se recorten para llenar el contenedor */
+        }
+        button {
+            margin: 0 10px;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <p> Paula Vargas Ledesma </p>
-    <p> Desarrollo de Software Multiplataforma</p>
-    <p> 20233tn071@utez.edu.mx </p>
-    <p> 20233tn071 </p>
-    <p> Tecnologías de la Info :] </p>
-    <p> Mi primera pagina weeeb</p>
+    <p> Estudio la carrera de Desarrollo de Software Multiplataforma</p>
+    <p> Mi correo es: 20233tn071@utez.edu.mx </p>
+    <p> Por si no es suficiente info, mi matricula 20233tn071 </p>
+    <p> Tecnologías de la Info :] wuuu</p>
+    <p> Ahora unas imagenes de cosas que me gustan </p>
 
+    <div id="carousel">
+        <button id="prev">Anterior</button>
+        <img id="carousel-img" src="" alt="Carrusel de imágenes">
+        <button id="next">Siguiente</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const images = [
+                'https://i.pinimg.com/474x/ea/b1/c5/eab1c51572c787cb12f1519cdf693d7a.jpg',
+                'https://i.pinimg.com/736x/55/e4/6c/55e46c71366f1c5418bfb6bddb616747.jpg',
+                'https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/183/2024/03/04/Shumatsu-Train-Doko-e-Iku_-2883861982.jpg',
+                'https://i.ytimg.com/vi/fP5XshoH_zg/maxresdefault.jpg',
+                'https://pa1.aminoapps.com/6115/2e3a279489e390b077733959cfbf134e84e4f9d9_hq.gif'
+            ];
+
+            let currentIndex = 0;
+
+            const imgElement = document.getElementById('carousel-img');
+            const prevButton = document.getElementById('prev');
+            const nextButton = document.getElementById('next');
+
+            function updateImage() {
+                imgElement.src = images[currentIndex];
+            }
+
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateImage();
+            });
+
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateImage();
+            });
+
+            // Inicializar la imagen
+            updateImage();
+        });
+    </script>
 </body>
 </html>
