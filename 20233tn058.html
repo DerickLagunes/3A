@@ -1,21 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Tu informacion Personal</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <script src='main.js'></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel de Imágenes</title>
+    <style>
+        .carousel-container {
+            position: relative;
+            width: 300px;
+            margin: auto;
+        }
+        .carousel-image {
+            display: none;
+            width: 100%;
+        }
+        .carousel-image.active {
+            display: block;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(53, 187, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .carousel-button.prev {
+            left: 0;
+        }
+        .carousel-button.next {
+            right: 0;
+        }
+    </style>
 </head>
-<body style="background-color: blue; color: white;">
-    <p style="text-align: center;"> <strong>NOMBRE: </strong><strong>Ángel Daniel</strong> Ocampo Martinez</p>
-    <p style="text-align: center;"> <strong>CARRERA: </strong>DESARROLLO DE <strong>MULTISOFWARE</strong></p>
-    <p style="text-align: center;"> <strong>GRUPO: </strong><strong>3</strong> A</p>
-    <p style="text-align: center;"> <strong>MATRICULA: </strong><strong>20233tn058</strong></p>
-    <p style="text-align: center;"> <strong>CORREO: </strong><strong>20233tn058@utez.edu.mx</strong></p>    
-    <p style="text-align: center;"> <strong>ESTUDIOS: </strong><strong>Media Superior</strong></p>
-    <p style="text-align: center;"> <strong>PASATIEMPOS: </strong><strong>Futbol soccer</strong> y <strong>Ir al GYM</strong></p>
-    <center><img src="IMG/foto.png" alt="Mi foto" >
+<body style="background-image: url('img/fondo_angel.avif'); background-size: cover; background-position: center;">
+    <div class="carousel-container">
+        <img src="img/gato.gif" alt="Imagen 1" class="carousel-image active">
+        <img src="img/descarga.jpg" alt="Imagen 2" class="carousel-image">
+        <img src="img/foto.png" alt="Imagen 3" class="carousel-image">
+        <img src="img/img.jpg" alt="Imagen 4" class="carousel-image">
+        <img src="img/sis.jpg" alt="Imagen 5" class="carousel-image">
+         </div>
+         
+         <button class="carousel-button prev" onclick="prevImage()">&#10094;</button>
+        <button class="carousel-button next" onclick="nextImage()">&#10095;</button>
+        
+ 
+   
+        
+    <script src="carrusel_angel.js"></script>
 </body>
 </html>
-

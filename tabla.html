@@ -1,0 +1,41 @@
+<table>
+    <thead>
+        <tr>
+            <td>Nombre</td>
+            <td>Descripción</td>
+            <td>Completado</td>
+        </tr>
+    </thead>
+    <tbody id="cuerpo">
+    </tbody>
+</table>
+
+<script src="Tarea.js"></script>
+<script>
+    var tarea1 = new Tarea("Pasear al perro","Lina quiere salir a pasear");
+    var tarea2 = new Tarea("Hacer tarea","Hacer la tarea de aplicaciones web");
+    var tarea3 = new Tarea("Comer","Más frutas y verduras");
+    var tarea4 = new Tarea("Hacer ejercicio","Al menos 30 minutos");
+    var tarea5 = new Tarea("Escribir reporte","De los resultados de la investigación");
+
+    var tareas = [tarea1,tarea2,tarea3,tarea4,tarea5];
+
+    var tbody = document.getElementById("cuerpo");
+    tareas.forEach(tarea => {
+        //console.log(tarea);
+        var fila = document.createElement("tr");
+        var nombre = document.createElement("td");
+        var desc = document.createElement("td");
+        var completado = document.createElement("td");
+
+        nombre.innerText = tarea.nombre;
+        desc.innerText = tarea.descripcion;
+        tarea.completado ? completado.innerText = "completado" : completado.innerText = "pendiente";
+
+        fila.appendChild(nombre);
+        fila.appendChild(desc);
+        fila.appendChild(completado);
+
+        tbody.appendChild(fila);
+    });
+</script>
