@@ -3,33 +3,74 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Perfil de Paula Vargas Ledesma</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+        body {
+            font-family: 'Permanent Marker', cursive;
+            background-color: #f5f5f5;
+            color: #444;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to right, #ffafbd, #ffc3a0);
+        }
+        h1 {
+            color: #ff6347;
+            font-size: 3em;
+            text-shadow: 2px 2px #ff4500;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin: 10px 0;
+            color: #4b0082;
+            text-shadow: 1px 1px #dda0dd;
+        }
         #carousel {
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         #carousel-img {
-            width: 300px; /* Ajusta este valor según el tamaño deseado */
-            height: 200px; /* Ajusta este valor según el tamaño deseado */
-            object-fit: cover; /* Esto asegura que las imágenes se recorten para llenar el contenedor */
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 5px solid #ff69b4;
         }
         button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
             margin: 0 10px;
-            padding: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+            text-shadow: 1px 1px #000;
+        }
+        button:hover {
+            background-color: #ff1493;
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
-    <p> Paula Vargas Ledesma </p>
-    <p> Estudio la carrera de Desarrollo de Software Multiplataforma</p>
-    <p> Mi correo es: 20233tn071@utez.edu.mx </p>
-    <p> Por si no es suficiente info, mi matricula 20233tn071 </p>
-    <p> Tecnologías de la Info :] wuuu</p>
-    <p> Ahora unas imagenes de cosas que me gustan </p>
+    <h1>Perfil de Paula Vargas Ledesma</h1>
+    <p>Estudio la carrera de Desarrollo de Software Multiplataforma</p>
+    <p>Mi correo es: 20233tn071@utez.edu.mx</p>
+    <p>Por si no es suficiente info, mi matrícula es 20233tn071</p>
+    <p>Tecnologías de la Información :] wuuu</p>
+    <p>Ahora unas imágenes de cosas que me gustan:</p>
 
     <div id="carousel">
         <button id="prev">Anterior</button>
