@@ -1,0 +1,30 @@
+img[src="img/itsuki.jpg"] {
+  width: 500px; 
+  height: 300px; 
+  object-fit: cover; 
+}
+
+
+#carrusel {
+  width: 500px; 
+  height: 300px; 
+  overflow: hidden; 
+  position: relative; 
+  margin: 0 auto; 
+}
+
+#carrusel img {
+  width: 100%; 
+  height: 100%; 
+  position: absolute; 
+  top: 0;
+  left: 0;
+  object-fit: cover; 
+}
+
+body {
+  background-color: #733d84;
+  font-family: Arial, sans-serif; 
+  text-align: center; 
+  padding: 20px;
+}
