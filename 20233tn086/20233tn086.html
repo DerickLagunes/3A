@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20233tn086</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/8f2cb0ebcf.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                borderRadius: {
+                    'none': '0',
+                    'sm': '0.125rem',
+                    DEFAULT: '0.25rem',
+                    DEFAULT: '4px',
+                    'md': '0.375rem',
+                    'lg': '0.5rem',
+                    'full': '500px',
+                    'large': '12px',
+                }
+            }
+        }
+    </script>
+    <style>
+        .itim-regular {
+            font-family: "Itim", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+        * {
+            font-family: itim;
+        }
+        .fa-2xl {
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="bg-zinc-800 flex flex-col items-center">
+    <main class="flex flex-col lg:flex-row items-center w-full">
+        <div class="bg-sky-700 w-full lg:w-2/5 h-auto lg:h-lvh rounded-r-full flex flex-col text-center">
+            <img src="https://assets.misjuegos.com/4/115734/101686/1024x1024/pou-the-original.webp" class="mx-auto mt-8 lg:mt-36 w-2/4 rounded-full border-double border-4 border-zinc-800 p-2">
+            <h1 class="text-zinc-800 text-2xl lg:text-4xl mt-4 lg:mt-8">Angel Ivan Ortega Chavarria</h1>
+        </div>
+        <section class="flex flex-col space-y-8 lg:space-y-14 my-auto w-11/12 lg:w-1/2 text-center mx-auto mt-8 lg:mt-0 pt-6">
+            <div class="flex flex-row items-center justify-center">
+                <i class="fa-solid fa-code text-2xl lg:text-3xl text-sky-700"></i>
+                <h1 class="text-sky-700 text-2xl lg:text-3xl ml-4 lg:ml-8">Desarrollo De Software Multiplataforma 3-A</h1>
+            </div>
+            <div class="flex flex-row items-center justify-center">
+                <i class="fa-solid fa-envelope text-2xl lg:text-3xl text-sky-700"></i>
+                <h1 class="text-sky-700 text-2xl lg:text-3xl ml-4 lg:ml-8">20233tn086@utez.edu.mx</h1>
+            </div>
+            <div class="flex flex-row items-center justify-center">
+                <i class="fa-solid fa-user text-2xl lg:text-3xl text-sky-700"></i>
+                <h1 class="text-sky-700 text-2xl lg:text-3xl ml-4 lg:ml-8">20233tn086</h1>
+            </div>
+            <div class="flex flex-row items-center justify-center">
+                <i class="fa-solid fa-user-graduate text-2xl lg:text-3xl text-sky-700"></i>
+                <h1 class="text-sky-700 text-2xl lg:text-3xl ml-4 lg:ml-8">Medio Superior</h1>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="flex flex-row items-center justify-center">
+                    <i class="fa-solid fa-hourglass-start text-2xl lg:text-3xl text-sky-700"></i>
+                    <h1 class="text-sky-700 text-2xl lg:text-3xl ml-4 lg:ml-8">Pasatiempos</h1>
+                </div>
+                <div class="flex flex-col lg:flex-row justify-center items-center gap-4 mt-4 lg:mt-8">
+                    <div class="relative group w-3/4 lg:w-auto">
+                        <img src="https://portalacademico.cch.unam.mx/sites/default/files/portadas/2022-10/elementos-de-lenguaje-de-programacion-java-portada.jpg" class="w-full lg:w-52 h-36 hover:opacity-10">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-50 text-white text-lg group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">Programar</div>
+                    </div>
+                    <div class="relative group w-3/4 h-full lg:w-auto">
+                        <img src="https://img.freepik.com/vector-gratis/ilustracion-personas-que-tienen-fiesta_53876-26711.jpg" class="w-full lg:w-52 h-36 hover:opacity-10">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-50 text-white text-lg group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">Salir Con Amigos</div>
+                    </div>
+                    <div class="relative group w-3/4 lg:w-auto">
+                        <img src="https://s1.abcstatics.com/abc/www/multimedia/economia/2023/02/10/sleep-gcc-Rb0Ia3m6tQ1Y32GLy6i2clK-1200x840@abc.png" class="w-full lg:w-52 h-36 hover:opacity-10">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-50 text-white text-lg group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">Dormir</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="flex items-center justify-center h-screen flex-col gap-5 w-full">
+        <h2 class="text-sky-700 text-2xl lg:text-4xl mt-8">Mis Peliculas Favoritas</h2>
+        <div class="relative w-11/12 lg:w-7/12 h-4/6 text-center flex flex-col justify-center items-center">
+            <img id="carrusel" class="text-2xl w-full h-full object-cover rounded-lg shadow-lg" src="">
+            <button id="anterior" class="text-2xl lg:text-3xl ml-5 absolute left-0 top-1/2 transform -translate-y-1/2 bg-sky-700 text-white p-2 rounded-full focus:outline-none hover:bg-blue-700 w-10 h-10 lg:w-14 lg:h-14">❮</button>
+            <button id="siguiente" class="text-2xl lg:text-3xl mr-5 absolute right-0 top-1/2 transform -translate-y-1/2 bg-sky-700 text-white p-2 rounded-full focus:outline-none hover:bg-blue-700 w-10 h-10 lg:w-14 lg:h-14">❯</button>
+            <div class="absolute bottom-2 flex flex-row gap-2">
+                <div class="bg-gray-200 text-white p-2 rounded-full focus:outline-none hover:bg-sky-700 cursor-pointer" id="1"></div>
+                <div class="bg-gray-200 text-white p-2 rounded-full focus:outline-none hover:bg-sky-700 cursor-pointer" id="2"></div>
+                <div class="bg-gray-200 text-white p-2 rounded-full focus:outline-none hover:bg-sky-700 cursor-pointer" id="3"></div>
+                <div class="bg-gray-200 text-white p-2 rounded-full focus:outline-none hover:bg-sky-700 cursor-pointer" id="4"></div>
+                <div class="bg-gray-200 text-white p-2 rounded-full focus:outline-none hover:bg-sky-700 cursor-pointer" id="5"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
