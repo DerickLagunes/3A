@@ -1,19 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primer pagina</title>
+    <title>Mi página</title>
+    <style>
+        /* Estilos generales para el cuerpo de la página */
+        body {
+            background-color: rgb(47, 128, 175);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+        }
+        /* Estilos para el contenedor del encabezado */
+        div.header-container {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        header {
+            margin-bottom: 20px;
+        }
+        /* Estilos para el título principal */
+        h1 {
+            font-size: 28px;
+        }
+        /* Estilos para el subtítulo */
+        h2 {
+            font-size: 24px;
+        }
+        /* Estilos para la lista ordenada */
+        ol {
+            list-style-type: none;
+            padding: 0;
+        }
+        /* Estilos para cada elemento de la lista */
+        li {
+            margin-bottom: 10px;
+        }
+        /* Estilos para las imágenes generales */
+        img {
+            width: 150px;
+            height: auto;
+        }
+        /* Estilos para el contenedor del slideshow */
+        #slideshow {
+            margin: 20px auto;
+        }
+        /* Estilos para la imagen del slideshow */
+        #slideshow img {
+            width: 300px;
+            height: auto;
+        }
+        /* Estilos para los botones */
+        .buttons {
+            margin-top: 10px;
+            
+        }
+        /* Pone fondo transparente en los botones, quita bordes y pone efecto suave al pasar el mouse por encima*/
+        .buttons button {
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 5px;
+        }
+        /* Sirve para cambiar el color de el boton al pasar por encima de el*/
+        .buttons button:hover {
+            background-color: rgba(66, 84, 187, 0.9);
+            color: rgb(0, 11, 17);
+        }
+    </style>
 </head>
-<body bgcolor="blue">
+<body>
+  
+    <div class="header-container">
+        <header>
+            <h1>Angel Sebastian Jimenez Ureña</h1>
+            <img src="img/picture_sebas.jpeg" alt="Picture">
+            <h2>Matrícula: 20233tn097</h2>
+        </header>
     <ol>
-        <li>Angel Sebastian Jimenez Ureña</li>
-        <li>DSM 3-.A</li>
-        <li>20233tn097@utez.edu.mx</li>
-        <li>20233tn097</li>
-        <li>medio superior</li>
-        <li>escuchar musica</li>
-        <li>jugar videojuegos</li>
-    </ol> 
+        <li>Email: 20233tn097@utez.edu.mx</li>
+        <li>Mi nivel de estudios es medio superior</li>
+        <li>Cuento con una carrera técnica en </li>
+        <li>Soporte y Mantenimiento En Equipo De Computo</li>
+        <li>Lo que más me gusta hacer es:</li>
+        <li>Escuchar música y Jugar videojuegos</li>
+    </ol>
+    </div>
+
+    <h1>Mis cantantes/músicos favoritos:</h1>
+
+    <!-- Contenedor del slideshow -->
+    <div id="slideshow">
+        <!-- Imagen del slideshow -->
+        <img id="slideshow-image" src="" alt="Slideshow Image">
+        <!-- Botones para cambiar de imagen -->
+        <div class="buttons">
+            <button id="prevBtn" onclick="prevImage()">Anterior</button>
+            <button id="nextBtn" onclick="nextImage()">Siguiente</button>
+        </div>
+    </div>
+
+    <script>
+        // Arreglo con las URL de las imágenes 
+        const images = [
+            'https://cdn-3.expansion.mx/dims4/default/ab9f62b/2147483647/strip/true/crop/1200x665+0+0/resize/1200x665!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2Fbc%2F5e%2F170397e34490987337ef2a673824%2Fnatanael-cano-elle-mexcio.jpg',
+            'https://www.beon.com/wp-content/uploads/2018/07/Drake-Scorpion.jpg',
+            'https://cnnespanol.cnn.com/wp-content/uploads/2023/05/the-weeknd-121222-e1684150641277.jpeg?quality=100&strip=info',
+            'https://www.billboard.com/wp-content/uploads/2023/05/01-Rels-B-cr-@chocolatkid-billboard-1548.jpg?w=942&h=623&crop=1',
+            'https://grandeslanzamientos.com.co/wp-content/uploads/2023/11/facebook-61-1024x536.jpg',
+            'https://media.gq.com.mx/photos/64ff9c9706c32c063bf2e2ff/16:9/w_2560%2Cc_limit/Trueno_Tranky_Funky.jpg'
+        ];
+
+        // inicializa el indice en 0
+        let currentIndex = 0;
+        const imgElement = document.getElementById('slideshow-image');
+
+        // Función para mostrar la imagen en base al indice en el que se ubique
+        function showImage(index) {
+            imgElement.src = images[index];
+            // Verifica si se llegó al límite de imágenes y deshabilita los botones si es necesario
+             prevBtn.disabled = index === 0;
+             nextBtn.disabled = index === images.length - 1;
+        }
+
+        // Función para mostrar la imagen anterior en el arreglo
+        function prevImage() {
+            // Decrementa el índice, si llega a 0, va al último índice del arreglo
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            showImage(currentIndex);
+        }
+
+        // Función para mostrar la siguiente imagen en el arreglo
+        function nextImage() {
+            // Incrementa el índice, si llega al último índice o imagen, vuelve al índice 0
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            showImage(currentIndex);
+        }
+
+        // Inicializa el slideshow y muestra la primera imagen
+        showImage(currentIndex);
+    </script>
 </body>
 </html>
