@@ -21,13 +21,81 @@
             <p>Me llamo Jesús Emmanuel Gálvez Osorio</p>
             <p><strong>Correo:</strong> 20233tn108@utez.edu.mx</p>
             <p><strong>Preparatoria:</strong> Conalep Temixco.</p>
-            <p><strong>Hobbies:</strong> Dibujar, leer novelas literarias, practcar guitarra, ver titoks.</p>
+            <p><strong>Hobbies:</strong> Dibujar, leer novelas literarias, practicar guitarra, ver titoks.</p>
             <br>
             <img src="img/oto.jpg" alt="Descripción de la imagen" width="500">
-
-<br>
-            
+            <br>
         </article>
+
+        <style>
+            #image-container {
+                text-align: center;
+                margin-top: 50px;
+            }
+            #image-container img {
+                max-width: 100%;
+                height: auto;
+            }
+            #controls {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+            }
+            #controls button {
+                margin: 0 10px;
+            }
+            h2 {
+                color: darkgoldenrod;
+            }
+        </style>
+
+        <br><br><br>
+        <h2>Imagénes de templos chinos</h2>
+        <div id="image-container">
+            <img id="slideshow-image" src="" alt="Presentación de Imágenes">
+        </div>
+        <div id="controls">
+            <button id="Anterior-boton">Anterior</button>
+            <button id="siguiente-boton">Siguiente</button>
+        </div>
+    
+        <script>
+            // URLs de las imágenes
+            const images = [
+                'img/temploCielo.jpg',
+                'img/dacien.jpg',
+                'img/confucius-temple.jpg',
+                'img/chinoTemple.jpeg',
+                'img/jokhang-temple.jpg'
+            ];
+    
+            // Índice de la imagen actual
+            let currentIndex = 0;
+    
+            // Elementos del DOM
+            const slideshowImage = document.getElementById('slideshow-image');
+            const prevButton = document.getElementById('Anterior-boton');
+            const nextButton = document.getElementById('siguiente-boton');
+    
+            // Función para actualizar la imagen mostrada
+            function updateImage() {
+                slideshowImage.src = images[currentIndex];
+            }
+    
+            // Event Listeners para los botones
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+                updateImage();
+            });
+    
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+                updateImage();
+            });
+    
+            // Inicializar la primera imagen
+            updateImage();
+        </script>
     </main>
     <footer>UTEZ DSM 3ºA</footer>
 </body>
