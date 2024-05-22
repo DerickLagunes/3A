@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Museum Exhibit</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Cormorant+Garamond:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #a7b6d4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            font-family: 'Lobster', cursive;
+            background-color: #007BFF;
+            color: #65ebe4;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 36px;
+            border-bottom: 5px dashed #95f5f0;
+        }
+        #content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #8bdd7b;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            border: 3px dotted #007BFF;
+        }
+        .info {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .info p {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+        #slideshow {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border: 3px dashed #007BFF;
+            background-color: #74ffbe;
+            border-radius: 8px;
+        }
+        #slideshow img {
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            border: 3px solid #007BFF;
+            padding: 5px;
+            background-color: #3b2e2e;
+            border-radius: 8px;
+        }
+        #controls {
+            margin-top: 20px;
+            text-align: center;
+        }
+        #controls button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        #controls button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>Museum Exhibit</header>
+    <div id="content">
+        <div class="info">
+            <p>Piero Vargas Ledesma</p>
+            <p>Desarrollo de software multiplataforma</p>
+            <p>20233tn072@utez.edu.mx</p>
+            <p>20233tn072</p>
+            <p>Tecnologias de la informacion</p>
+            <p>Construyo lego</p>
+           
+        </div>
+        <div id="slideshow">
+            <img id="image" src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421589596/the-legend-of-zelda-legendary-edition-vol-1-9781421589596_hr.jpg" alt="Presentación de Imágenes">
+        </div>
+        <div id="controls">
+            <button id="prev">Anterior</button>
+            <button id="next">Siguiente</button>
+        </div>
+    </div>
+
+    <script>
+        const images = [
+            'https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421589596/the-legend-of-zelda-legendary-edition-vol-1-9781421589596_hr.jpg',
+            'https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421589619/the-legend-of-zelda-legendary-edition-vol-3-9781421589619_hr.jpg',
+            'https://www.editions-soleil.fr/sites/default/files/product/9782302006843-001-X.jpeg',
+            'https://sp.yimg.com/ib/th?id=OPHS.zCP21YXu7MerlA474C474&o=5&pid=21.1&w=&h=',
+            'https://tse3.mm.bing.net/th?id=OIP.sGyHXS0_7tgzgu_V4NVgggHaKG&pid=Api&P=0&h=180'
+        ];
+
+        let currentIndex = 0;
+        const imageElement = document.getElementById('image');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+
+        function showImage(index) {
+            imageElement.src = images[index];
+        }
+
+        function showPrevImage() {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            showImage(currentIndex);
+        }
+
+        function showNextImage() {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            showImage(currentIndex);
+        }
+
+        prevButton.addEventListener('click', showPrevImage);
+        nextButton.addEventListener('click', showNextImage);
+    </script>
+</body>
+</html>
