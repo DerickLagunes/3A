@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>Registro de examen</h1>
+    <form action="verExamen.html" method="get">
+        <label>Nombre del examen: 
+            <input name="nombreExamen" type="text" maxlength="40" placeholder="Nombre del examen"/>
+        </label>
+        <br>
+        <label>Email: 
+            <input name="emailExamen" type="email" placeholder="Ingrese su correo" />
+        </label>
+        <br>
+        <label>Descripción del examen: 
+            <input name="descripcionExamen" type="text" placeholder="Ingrese la descripción" />
+        </label>
+        <br>
+        <label>Fecha: 
+            <input name="fechaExamen" type="date" value="" />
+        </label>
+        <br>
+        <label># de preguntas: 
+            <input name="numeroExamen" type="number" placeholder="# de reactivos" />
+        </label>
+        <br>
+        <label>Esta activo? 
+            <select name="activoExamen">
+                <option value="Si">Si</option>
+                <option value="No">No</option>
+            </select>
+        </label>
+        <br>
+        <input type="submit" value="Registrar Examen" />
+    </form>
+    <script>
+        getParameter = (key) => {
+        address = window.location.search; // url de la ventana actual
+        // Objeto de tipo URLSearchParams
+        parameterList = new URLSearchParams(address);
+        // Regresa el valor del parámetro “key”
+        return parameterList.get(key);
+    }
+    console.log(getParameter("nombreExamen"));
+    </script>    
+</body>
+</html>
