@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .contenedor-imagen {
+            position: relative;
+            width: 450px; 
+            height: 350px; 
+        }
+        
+        .contenedor-imagen img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+        .buttons button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff; /* Color del texto */
+            background-color: #9900ff; /* Color de fondo */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .buttons button:hover {
+            background-color: #3c00b3; /* Color de fondo al pasar el cursor */
+        }
+        
+        p {
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body background="https://e0.pxfuel.com/wallpapers/792/227/desktop-wallpaper-modo-diablo-duki-pinterest-fondos-de-pantalls.jpg">
+    <div class="contenedor-imagen">
+        <img id="image" src="" alt="Imagen de la presentación">
+    </div>
+    
+    <div class="buttons">
+        <button id="prev">Anterior</button>
+        <button id="next">Siguiente</button>
+    </div>
+    
+    <p style="color: aliceblue;"><strong>NOMBRE:</strong> Bigvai Jatniel Villanueva Miranda</p>
+    <p style="color: aliceblue;"><strong>CARRERA Y GRUPO:</strong> 3A</p>
+    <p style="color: aliceblue;"><strong>CORREO INSTITUCIONAL:</strong> 20233tn104@utez.edu.mx</p>
+    <p style="color: aliceblue;"><strong>MATRICULA:</strong> 20233TN104</p>
+    <p style="color: aliceblue;"><strong>ESTUDIO:</strong> Medio superior</p>
+    <p style="color: aliceblue;"><strong>PASATIEMPOS:</strong> jugar futbol, escuchar música y manejar</p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = [
+                'https://i.scdn.co/image/ab67616d0000b273305240b65c28020de3aac8eb',
+                'https://i.scdn.co/image/ab67616d0000b273d00aac109ba7f7c0734391f8',
+                'https://i.scdn.co/image/ab67616d0000b273e1f10079298289dc8d1d42c0',
+                'https://i.scdn.co/image/ab67616d0000b2735ec9884f40c7dc32a92694a8',
+                'https://i.scdn.co/image/ab67616d0000b273f74269b6ebdb5ab2773c0be9'
+            ];
+
+            let currentIndex = 0;
+            const imageElement = document.getElementById('image');
+            const prevButton = document.getElementById('prev');
+            const nextButton = document.getElementById('next');
+
+            // Función para actualizar la imagen mostrada
+            function updateImage() {
+                imageElement.src = images[currentIndex];
+            }
+
+            // Event listeners para los botones
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                updateImage();
+            });
+
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                updateImage();
+            });
+
+            // Inicializa la primera imagen
+            updateImage();
+        });
+    </script>
+</body>
+</html>
