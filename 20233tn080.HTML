@@ -1,19 +1,54 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tu Matrícula</title>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Carrusel de Imagenes</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/estilosCarrusel.css'>
+    <script src='main.js'></script>
+
+    <script>
+        const Chivas =["Bob_elegante.jpg","jose_torres.jpg","Martin.jpg","Master_Chief.jpg","tqm_chivas"];
+        thisPic = 0;
+        imgCt = Chivas.length -1
+
+        function processPrevious(){
+            if(document.images && thisPic > 0){
+                thisPic--
+                document.myPicture.src=Chivas[thisPic];
+            }
+        }
+
+        function processNext(){
+            if(document.images && thisPic < imgCt){
+                thisPic++
+                document.myPicture.src=Chivas[thisPic];
+            }
+        }
+
+    </script>
+
 </head>
-<body>
-<h1>Mi Matrícula</h1>
-<p><strong>Nombre:</strong>Jesus Zohet Neri Guirant</p>
-<p><strong>Carrera y Grupo:</strong> Tu Carrera:Desarrollo de softare multiplataforma,Grupo:2A</p>
-<p><strong>Correo Institucional:</strong> 20233tn080@utez.edu.mx</p>
-<p><strong>Matrícula:</strong> 20233tn080@utez.edu.mx</p>
-<p><strong>Estudios de Medio Superior:</strong> Bachilleres</p>
-<p><strong>Pasatiempos:</strong> Ver muchas peliculas,ir al cine y simplemente salir mucho:)</p>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcfDiUtKqSy7-3dbqR4rSa5k9XFM-zIRT-wUJ3rKXYNQ&s" alt="Imagen de películas">
-<img src="https://upload.wikimedia.org/wikipedia/en/4/42/Master_chief_halo_infinite.png" alt="Imagen de películas">
+<body bgcolor="#FFFFFF">
+    <H1 align="center">La vida es bella Jovenes</H1>
+    <p align="center">Mi nombre:Jesus Zohet <br>
+        Mi edad:18 <br>
+        Carrera:Desarrollo de software Multiplataforma <br>
+        Correo:20233tn080@utez.edu.mx <br>
+        Estudios:Colegio de Bchilleres Plantel 02 Jiutepec <br>
+        Grado y Grupo:3-A <br>
+        Mis pasatiempos:Ver peliculas es mi pasatiempo maximo y lo que hago y veo diario,en segundo lugar esta jugar videojuegos y el mas importante querer a toti
+
+    </p>
+    <center>
+        <img id="images" name="myPicture" src="Bob_elegante.jpg">
+        <br>
+        <input type="button" id="atras" value="Regresar" onclick="processPrevious();">
+        <input type="button" id="siguiente" value="Siguiente" onclick="processNext();">
+
+    </center>
+
+    
 </body>
 </html>
