@@ -4,56 +4,94 @@
 <head>
     <title>Cesar Emilio</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/20233tn076.css">
-    <script src="css/20233tn076.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <div class="body_main">
-        <video autoplay loop muted>
+    <div class="relative">
+        <video autoplay loop muted class="fixed top-0 left-0 w-full h-full object-cover -z-10">
             <source src="img/klee-walking.mp4" type="video/mp4">
         </video>
-        <div class="img">
-            <img>
-        </div>
-        <div class="title">
-            <div class="title--shadowed">
-                <p class="title_text--name">Hola! Soy César</p>
-                <p class="title_text--notInfo">(así es, soy ese)</p>
-                <p class="title_text--secondaryInfo">Ésta es mi primer página web en la utez!</p>
+        <div
+            class="w-1/1 xl:w-3/4 sm:flex-col xl:flex-row justify-center m-auto bg-blue-900/50 relative my-12 rounded-lg xl:h-1/2 border-2 border-white-100 flex-wrap">
+            <div class="xl:w-full xl:min-w-1/4 xl:h-1/2 flex-1 flex items-center sm:w-1/2 m-auto sm:h-1/8">
+                <img class="rounded-lg h-1/1 max-h-full object-cover min-w-80 m-auto p-4 sm:h-1/1 sm:max-h-1/2"
+                    src="img/cesar.jpg">
+            </div>
+
+            <div
+                class="flex flex-col justify-center items-center lg:text-5xl text-3xl text-white text-center w-1/1 xl:w-2/4 sm:w-full sm:min-w-full sm:py-6">
+                <p>Hola! Soy César</p>
+                <p class="text-base my-2">(así es, soy ese)</p>
+                <p>Ésta es mi primer página web en la utez!</p>
             </div>
         </div>
-        <div class="main">
-            <div class="inner_main">
-                <div class="inner_main--shadow">
-                    <p class="inner_main--p">Voy en la carrera de DSM (Desarrollo de Software Multiplataforma)</p>
-                    <p class="inner_main--p">Actualmente en el tercer cuatrimestre</p>
-                    <p class="inner_main--p">Mi correo institucional para contacto es
+        <div class="w-1/1 pt-4 xl:w-3/4 bg-blue-900/50 m-auto flex flex-col items-center border-2 border-white-100 rounded-lg">
+            <div class="w-1/1 xl:w-3/4 px-8">
+                <div class="text-xl text-white p-2 xl:p-10">
+                    <p class="">Voy en la carrera de DSM (Desarrollo de Software Multiplataforma)</p>
+                    <p class="">Actualmente en el tercer cuatrimestre</p>
+                    <p class="">Mi correo institucional para contacto es
                         <strong>20233tn076</strong>@utez.edu.mx
                     </p>
-                    <p class="inner_main--p inner_main--p-small">Mi matrícula! :D</p>
-                    <p class="inner_main--p">
+                    <p class="">
                         Hasta ahora, solo he cursado la preparatoria en el CBTis 166 Pablo Torres Burgos
                     </p>
-                    <p class="inner_main--p">
+                    <p class="my-6">
                         Y mis pasatiempos son varios! Entre ellos están:
                     </p>
-                    <div class="inner_main--div">
-                        <ul class="inner_main--ul">
-                            <li class="inner_main--ul-li">Crear videojuegos 2D en rust utilizando la librería ggez</li>
-                            <li class="inner_main--ul-li">Aprender a hacer pixelart en aseprite para crear un videojuego
-                            </li>
-                            <li class="inner_main--ul-li">Leer libros o novelas literarias</li>
-                            <li class="inner_main--ul-li">Jugar videojuegos</li>
+                    <div class="">
+                        <ul class="mx-4 xl:mx-20">
+                            <li class="">Crear videojuegos 2D en rust utilizando la librería ggez</li>
+                            <li class="">Aprender a hacer pixelart en aseprite para crear un videojuego</li>
+                            <li class="">Leer libros o novelas literarias</li>
+                            <li class="">Jugar videojuegos</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="logo">
-                <a target="_blank" href="http://www.utez.edu.mx"><img src="img/Logo-utez.png" alt="logo utez"></a>
+            <div class="xl:fixed sm:static bottom-0 right-0">
+                <a target="_blank" href="http://www.utez.edu.mx"><img src="img/Logo-utez.png" alt="logo utez"
+                        class="w-96"></a>
+            </div>
+        </div>
+
+        <div class="w-1/1 xl:w-3/4 py-12 border-white-100 border-2 rounded-lg bg-blue-900/50 m-auto my-12 flex flex-col items-center justify-center w-h-96">
+            <p class="text-lg xl:text-3xl text-white">Adjunto unas bellas imágenes de mi persona</p>
+            <div class="w-1/1 xl:w-3/4 py-12 m-auto my-12 flex items-center justify-center w-h-96">
+                <button id="buttonAnterior" class="text-6xl w-16 bg-white/50 pb-3 mx-8 flex justify-center items-center h-16 rounded-lg"><</button>
+                <img alt="" class="h-64 w-64 object-cover" id="img-carrousel">
+                <button id="buttonSiguiente" class="text-6xl w-16 bg-white/50 pb-3 mx-8 flex justify-center items-center h-16 rounded-lg">></button>
             </div>
         </div>
     </div>
+
+    <script>
+        const img = document.getElementById('img-carrousel');
+        const arrayImgs = [ 
+            "img/cesar.jpg", 
+            "img/cesar2.jpg",
+            "img/cesar3.jpg",
+            "img/cesar4.jpg",
+            "img/cesar5.jpg"
+        ];
+        img.src = arrayImgs.img1;
+        buttonAnterior = document.getElementById('buttonAnterior');
+        buttonSiguiente = document.getElementById('buttonSiguiente');
+        
+        let indice = 0;
+        img.src = arrayImgs[indice];
+
+        buttonAnterior.addEventListener('click', () => {
+            indice = (indice === 0) ? arrayImgs.length - 1 : indice - 1;
+            img.src = arrayImgs[indice];
+        });
+        buttonSiguiente.addEventListener('click', () => {
+            indice = (indice === arrayImgs.length - 1) ? 0 : indice + 1;
+            img.src = arrayImgs[indice];
+        });
+    </script>
 </body>
 
 </html>
