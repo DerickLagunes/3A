@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registro de examen</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <style>
+        /* Estilos generales para el cuerpo de la página */
+        body {
+            background-color: rgb(22, 30, 48);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+        }
+        /* Estilos para el título principal */
+        h1 {
+            font-size: 28px;
+        }
+        /* Estilos para el subtítulo */
+        h2 {
+            font-size: 24px;
+        }  
+        /* Estilos para el formulario */
+        form {
+            border: 2px solid white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 400px;
+        }
+        /* Estilos para el botón de registro */
+        input[type="submit"] {
+            background-color: rgb(56, 155, 180);
+            color: rgb(255, 251, 251);
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <!-- Creacion de formulario -->
+    <form id="registroForm">
+        <h1>Registro de Usuario</h1>
+        <label>Nombre/Nombres: <input name="nombrePersona" type="text" maxlength="20" placeholder="Ingresa tu nombre/nombres:" required></label>
+        <br>
+        <label>Apellidos: <input name="apellidosPersona" type="text" maxlength="20" placeholder="Ingresa tus apellidos:" required></label>
+        <br>
+        <label>Email: <input name="emailPersona" type="email" maxlength="50" placeholder="Ingresa email" required></label>
+        <br>
+        <label>Fecha de Nacimiento: <input name="fechaNacimiento" type="date" required></label>
+        <br>
+        <label>Numero de telefono: <input name="numeroTelefono" type="number" placeholder="Ingresa tu # de telefono" required></label>
+        <br>
+        <label>Nombre de usuario: <input name="nombreUsuario" type="text" placeholder="Ingresa tu nombre de usuario" required></label>
+        <br>
+        <label>Contraseña: <input name="contraseñaUsuario" type="password" placeholder="Ingresa contraseña" required></label>
+        <br>
+        <label>Confirmar Contraseña: <input name="confirmarContraseña" type="password" placeholder="Ingresa contraseña" required></label>
+        <br>
+        <p id="errorMensaje" style="color:rgb(255, 0, 0);"></p>
+        <input type="submit" value="Registrar datos">
+    </form>
+
+    <!-- Creacion de seccion de respuesta formulario para cuando se registren los datos -->
+    <div id="respuestaFormulario" style="display:none;">
+        <h1>Estos son tus datos:</h1>
+        <h1 id="nombreCompleto"></h1>
+        <h2 id="apellidos"></h2>
+        <p>Email: <a id="email"></a></p>
+        <p>Teléfono: <a id="telefono"></a></p>
+        <p id="edad"></p>
+        <p><span id="usuario"></span></p> 
+    </div>
+
+    <script>
+        getParameter = (key) => {
+            // url de la ventana actual
+            address = window.location.search; 
+            //Objeto de tipo URLSearchParams
+            parameterList = new URLSearchParams(address);
+            //Regresa el valor del parámetro “key”
+            return parameterList.get(key);
+        }
+        document.getElementById("registroForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evitar que el formulario se envíe
+
+            // Capturar los valores del formulario
+            const nombre = document.getElementsByName("nombrePersona")[0].value;
+            const apellidos = document.getElementsByName("apellidosPersona")[0].value;
+            const email = document.getElementsByName("emailPersona")[0].value;
+            const fechaNacimiento = new Date(document.getElementsByName("fechaNacimiento")[0].value);
+            const telefono = document.getElementsByName("numeroTelefono")[0].value;
+            const usuario = document.getElementsByName("nombreUsuario")[0].value; 
+            const contraseña = document.getElementsByName("contraseñaUsuario")[0].value;
+            const confirmarContraseña = document.getElementsByName("confirmarContraseña")[0].value;
+
+            // Verificar si las contraseñas coinciden y si tienen menos de 5 caracteres
+            if (contraseña !== confirmarContraseña) {
+                document.getElementById("errorMensaje").innerText = "Las contraseñas no coinciden";
+                return;
+            } else if (contraseña.length < 5) {
+                document.getElementById("errorMensaje").innerText = "Tu contraseña es insegura (menos de 5 caracteres)";
+                return;
+            } else {
+                document.getElementById("errorMensaje").innerText = ""; // Limpiar el mensaje de error
+            }
+
+            // Mostrar la información del usuario y calculo de edad solo por año
+            const hoy = new Date();
+            const edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+            document.getElementById("nombreCompleto").innerText = nombre;
+            document.getElementById("apellidos").innerText = apellidos;
+            document.getElementById("email").innerText = email;
+            document.getElementById("email").href = "mailto:" + email;
+            document.getElementById("telefono").innerText = telefono;
+            document.getElementById("telefono").href = "tel:" + telefono;
+            document.getElementById("edad").innerText = "Edad: " + edad + " años";
+            document.getElementById("usuario").innerText = "Usuario: " + usuario; // Mostrar el nombre de usuario
+
+            // Mostrar la sección de respuesta del formulario y ocultar el formulario de registro
+            document.getElementById("respuestaFormulario").style.display = "block";
+            document.getElementById("registroForm").style.display = "none";
+        });
+    </script>
+</body>
+</html>
