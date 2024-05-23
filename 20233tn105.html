@@ -4,57 +4,163 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Mi primera página</title>
+    <title>Carrusel de Imagenes RTR</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
 <style>
     body {
-        background-color: lightsteelblue;
-        align-items: center;
-        margin: 10%;
+        background-color: aliceblue;
     }
 
     h1 {
         text-align: center;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-        color: #A367B1;
-        text-shadow: 0px 0px 9px #f6eff0;
+        color: #fcfafc;
     }
 
     p {
-        border: #A367B1 solid;
-        padding: 5px;
+        font-size: smaller;
     }
 
     .informacion {
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         text-align: justify;
-        font-size: large;
-        margin-left: 35%;
-        margin-right: 20%;
+        font-size: smaller;
+        border-color: #A367B1;
+        /*margin-left: 35%;
+        margin-right: 20%;*/
 
+    }
+
+    table {
+        width: 90%;
+        text-align: center;
+        padding: 20px;
+    }
+
+    table th {
+        background-color: darkblue;
+        color: white;
+        width: auto;
+        font-size: 15px;
+    }
+
+    table td {
+        background-color: lightsteelblue;
+        font-size: small;
+    }
+
+    header {
+        background-color: midnightblue;
+        padding: 5px;
+
+    }
+
+    footer {
+        background-color: midnightblue;
+        padding: 5px;
+        width: 98.3%;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        color: white;
+    }
+
+    img {
+        height: 400px;
+        width: auto;
+
+    }
+
+    .icon {
+        height: 20px;
+        width: 20px;
+    }
+
+
+    input[type="button"] {
+        width: 10%;
+        padding: 10px;
+        margin: 5px;
+        font-size: 16px;
+        background-color: midnightblue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    input[type="button"]:hover {
+        background-color: darkblue;
     }
 </style>
 
 <body>
-    <p>
-    <div>
-        <h1>Rocio Rodríguez Torres</h1>
-    </div>
-    <div class="informacion">
-        <br>Carrera: Desarrollo de Software Multiplataforma
-        <br>Grado: 3°A
-        <br>Matrícula: 20233TN105
-        <br>Correo institucional: 20233tn105@utez.edu.mx
-        <br> Estudié en el Cecyte 03 Plantel Emiliano Zapata
-        <br> Mis pasatiempos son:
-        <ol>
-            <li>Leer</li>
-            <li>Ver películas y series</li>
-            <li>Escuchar música y podcasts</li>
-        </ol>
-    </div>
-    </p>
+    <script>
+        const arregloImg = ["https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Caspar_David_Friedrich_-_Mondaufgang_am_Meer_-_Google_Art_Project.jpg/1200px-Caspar_David_Friedrich_-_Mondaufgang_am_Meer_-_Google_Art_Project.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Th%C3%A9odore_G%C3%A9ricault_-_Evening%2C_Landscape_with_an_Aqueduct.jpg/1200px-Th%C3%A9odore_G%C3%A9ricault_-_Evening%2C_Landscape_with_an_Aqueduct.jpg",
+            "https://cdn.topofart.com/images/artists/Thomas_Gainsborough/paintings-wm/gainsborough124.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Caspar_David_Friedrich_018.jpg/1200px-Caspar_David_Friedrich_018.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/The_Bookworm_-_Grohmann_Museum.jpg/220px-The_Bookworm_-_Grohmann_Museum.jpg"];
+
+        posicion = 0;
+        imgCt = arregloImg.length - 1;
+        function regresarImg() {
+            if (document.images && posicion > 0) {
+                posicion--;
+                document.etiquetaImg.src = arregloImg[posicion];
+            } else {
+                posicion = imgCt;
+                document.etiquetaImg.src = arregloImg[posicion];
+            }
+        }
+        function siguienteImg() {
+            if (document.images && posicion < imgCt) {
+                posicion++;
+                document.etiquetaImg.src = arregloImg[posicion];
+            } else {
+                posicion = 0;
+                document.etiquetaImg.src = arregloImg[posicion];
+            }
+        }
+
+
+
+    </script>
+    <header>
+        <h1>Carrusel de Imágenes</h1>
+    </header>
+    <center>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Carrera</th>
+                <th>Grado y grupo</th>
+                <th>Matrícula</th>
+                <th>Correo</th>
+                <th>Estudios</th>
+                <th>Pasatiempos</th>
+            </tr>
+            <tr>
+                <td>Rodríguez Torres Rocio</td>
+                <td>Desarrollo de Software Multiplataforma</td>
+                <td>3°A</td>
+                <td>20233TN105</td>
+                <td>20233tn105@utez.edu.mx</td>
+                <td>Cecyte 03 Plantel Emiliano Zapata</td>
+                <td>Leer, ver películas y series, escuchar música y podcasts</td>
+            </tr>
+        </table>
+        <img name="etiquetaImg"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Caspar_David_Friedrich_-_Mondaufgang_am_Meer_-_Google_Art_Project.jpg/1200px-Caspar_David_Friedrich_-_Mondaufgang_am_Meer_-_Google_Art_Project.jpg">
+        <br>
+        <input type="button" id="atras" value="Atrás" onclick="regresarImg();">
+        <input type="button" id="siguiente" value="Siguiente" onclick="siguienteImg();">
+        </div>
+    </center>
+    <footer>
+        <p>Pinturas del <em>Romanticismo</em></p>
+    </footer>
 </body>
 
 </html>
