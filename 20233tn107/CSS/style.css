@@ -1,0 +1,147 @@
+body {
+    background-color: #111111;
+}
+
+#mascota-container {
+    position: fixed;
+    bottom: 20px;
+    left: 40px;
+    z-index: 1000;
+}
+
+#mascota-container img {
+    width: 200px;
+    cursor: pointer;
+}
+
+#mensaje-mascota {
+    font-family: sans-serif;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    border-radius: 5px;
+    position: relative;
+    padding: 20px;
+    margin-bottom: 2px;
+    filter: invert(1);
+    max-width: 500px;
+}
+#mensaje-mascota::before {
+    content: '';
+    position: absolute;
+    bottom: -20px; 
+    left: 60px;
+    border: 10px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.7);
+}
+
+
+.intro-container {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 25%;
+    height: 25%;
+    margin-bottom: 1rem;
+}
+
+.blue {
+    background-image: linear-gradient(to left, #f44336, #e91e63, #9c27b0, #844caf, #2196f3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.lead {
+    color: #f8f9fa;
+    text-align: justify;
+    width: 70%;
+    margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+    .lead {
+        width: 90%;
+    }
+}
+
+.Subtitle {
+    margin-top: 50px;
+    color: #f8f9fa;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.list-group-item {
+    background-color: #212529;
+    border-color: #343a40;
+    color: #fff;
+}
+
+#card{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 360px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.858);
+}
+
+#slider {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+}
+
+#imagen{
+    width: 100%;
+    height: auto;
+}
+
+#backButton,
+#nextButton{
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px; 
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    transition: 0.4s;
+    filter: invert(0.4);
+}
+
+#backButton{
+    background-image: url('../IMG/arrowButton.png');
+    transform: rotate(180deg);
+}
+
+#nextButton{
+    background-image: url('../IMG/arrowButton.png');
+}
+
+#backButton:hover,
+#nextButton:hover {
+    transition: 0.4s;
+    cursor: pointer;
+    filter: invert(1);
+}
+h2{
+    margin-top: 10px;
+    color: #f8f9fa;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+#piloto{
+    margin-top: 10px;
+    background-image: linear-gradient(to right, #f44336, #e91e63, #cc854b, #e7c91c, #0b91ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
