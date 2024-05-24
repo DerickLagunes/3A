@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Carrusel de Imagenes</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/estilosCarrusel.css'>
+    <script src='main.js'></script>
+
+    <script>
+        const Chivas =["img/Bob_elegante.jpg","jose_torres.jpg","Martin.jpg","Master_Chief.jpg","tqm_chivas"];
+        thisPic = 0;
+        imgCt = Chivas.length -1
+
+        function processPrevious(){
+            if(document.images && thisPic > 0){
+                thisPic--
+                document.myPicture.src=Chivas[thisPic];
+            }
+        }
+
+        function processNext(){
+            if(document.images && thisPic < imgCt){
+                thisPic++
+                document.myPicture.src=Chivas[thisPic];
+            }
+        }
+
+    </script>
+
+</head>
+<body bgcolor="#FFFFFF">
+    <H1 align="center">La vida es bella Jovenes</H1>
+    <p align="center">Mi nombre:Jesus Zohet <br>
+        Mi edad:18 <br>
+        Carrera:Desarrollo de software Multiplataforma <br>
+        Correo:20233tn080@utez.edu.mx <br>
+        Estudios:Colegio de Bchilleres Plantel 02 Jiutepec <br>
+        Grado y Grupo:3-A <br>
+        Mis pasatiempos:Ver peliculas es mi pasatiempo maximo y lo que hago y veo diario,en segundo lugar esta jugar videojuegos y el mas importante querer a toti
+
+    </p>
+    <center>
+        <img id="images" name="myPicture" src="Bob_elegante.jpg">
+        <br>
+        <input type="button" id="atras" value="Regresar" onclick="processPrevious();">
+        <input type="button" id="siguiente" value="Siguiente" onclick="processNext();">
+
+    </center>
+
+    
+</body>
+</html>
