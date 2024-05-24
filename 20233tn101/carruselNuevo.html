@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARRUSEL</title>
+    <style>
+        #slider {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        button {
+            background-color: #2a42a1; /* Color de fondo */
+            border: none; /* Sin borde */
+            color: white; /* Color del texto */
+            padding: 15px 32px; /* Espaciado */
+            text-align: center; /* Alineación del texto */
+            text-decoration: none; /* Subrayado */
+            display: inline-block; /* Mostrar como elemento en línea */
+            font-size: 16px; /* Tamaño de la fuente */
+            margin: 4px 2px; /* Márgenes alrededor del botón */
+            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+            border-radius: 12px; /* Bordes redondeados */
+            transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+        }
+    </style>
+    <style>
+        body {
+            background-color: #b3cfe9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="slider">
+    <img id="slide" src="" alt="Image Slider">
+    <br>
+    <button id="antes">Anterior</button>
+    <button id="despues">Siguiente</button>
+</div>
+
+<script>
+    const images = [
+        'https://jetsettimes.com/wp-content/uploads/2022/03/Mariposa-Monarca-Biosphere-Reserve-In-Mexico.jpeg',
+        'https://s3.abcstatics.com/abc/www/multimedia/bienestar/2023/07/10/atardecer-verano-1-R6funi5jYXxtpImvVtH33OO-1200x840@abc.jpg',
+        'https://www.rover.com/blog/wp-content/uploads/2019/06/deerhead1-1024x681.jpg',
+        'https://media.ambito.com/p/234eb9d1ffbae1bfdfc8b7fe74b1ab99/adjuntos/239/imagenes/040/692/0040692216/estrellas-el-cielojpg.jpg',
+        'https://wallpapercave.com/wp/wp3267948.jpg'
+    ];
+
+    let currentIndex = 0;
+
+    const slideImg = document.getElementById('slide');
+    const prevBtn = document.getElementById('antes');
+    const nextBtn = document.getElementById('despues');
+
+    function showImage(index) {
+        slideImg.src = images[index];
+    }
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+        showImage(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+        showImage(currentIndex);
+    });
+    showImage(currentIndex);
+   
+</script>
+</body>
+</html>
