@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body{
+            background-image: url(https://siaguanta.com/wp-content/uploads/2020/01/arreglos4.jpg);
+            padding: 14px;
+            margin: 15px;
+            font-weight: 900;
+
+        }
+        img{
+            max-width: 400px;
+            margin-top: 100px;
+
+        }
+        button{
+            width: 100px;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            transition: all ease-in-out 1s;
+            color: #4b4f5d;
+            font-weight: 900;
+        }
+        button:hover{
+            background-color: #cccccc;
+        }
+        .img {
+            background-color: #4b4f5d; /* Fondo semi-transparente */
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 50px auto;
+
+        }
+        p{
+            color: rgb(45, 40, 40);
+            font-size: 15px;
+            padding: 7px;
+            margin: 23px;
+        }
+        ol{
+            color: rgb(45, 40, 40);
+            font-size: 15px;
+            padding: 26px;
+            margin: 22px;
+
+        }
+        font{
+            font-size: 24px;
+            padding: 10px;
+            color: rgb(45, 40, 40);
+        }
+        .info{
+            padding: 10px;
+            margin: 15px;
+            
+        }
+
+        .info{
+            background-color: #ffd6a5; /* Fondo semi-transparente */
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 5px;
+
+            position: absolute;
+            width: 100%;
+            height: 85%;
+            background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco semi-transparente */
+            z-index: 2;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="fillter">
+
+    </div>
+  
+
+    <div style="overflow: auto;">
+        <div style="float: left; width: 50%;" class="img" id="slideshow" align="center">
+          <img id="slideshow-image">
+          <div class="buttons">
+            <button id="pBtn" onclick="pImg()">Anterior</button>
+            <button id="nBtn" onclick="nImg()">Siguiente</button>
+          </div>
+        </div>
+        <div style="float: left; width: 62%;">
+          <div class="info">
+            <p><strong><font size=5>Nombre:</font></strong> <font size=5>Adrian Uxue Chavez Martinez</font></p>
+            <p><strong><font size=5>Carrera y grupo:</font></strong> <font size=5>Desarrollo de Software Multiplataforma 3A</font></p>
+            <p><strong><font size=5>Correo:</font></strong> <font size=5>20233tn093@utez.edu.mx</font></p>
+            <p><strong>Matricula:</strong> 20233tn093</p>
+            <p><strong>Estudios:</strong> Nivel basico, medio superior y actualmente nivel superior</p>
+            <p><strong>Pasatiempos:</strong>
+              <ol>
+                <li>Escribir</li>
+                <li>Jugar Basketball</li>
+                <li>CHaquetearme</li>
+                <li>Aprender mas de programacion</li>
+              </ol>
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+    <script>
+
+        // Arreglo ocupando links de las imagenes
+        const img = ["./img/img1Array.jpeg","./img/img2Array.jpeg","./img/img3Array.jpeg",
+        "./img/img4Array.jpeg","./img/img5Array.jpeg"
+            
+        ];
+
+        // inicializar el indice en 0
+        let currentIndex = 0;
+        const imgElement = document.getElementById('slideshow-image');
+
+        // Función que muestra la imagen en base al indice en el que se ubique
+        function showImage(index) {
+            imgElement.src = img [index];
+            // Verifica si se llegó al límite de imágenes y deshabilita los botones si es necesario
+             pBtn.disabled = index === 0;
+             nBtn.disabled = index === img.length - 1;
+        }
+
+        // Función que muestra la imagen anterior
+        function pImg() {
+            // Decrementa el índice, si llega a 0, va al último índice del arreglo
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : img.length - 1;
+            showImage(currentIndex);
+        }
+
+        // Función que muestra la siguiente imagen en el arreglo
+        function nImg() {
+            // Se va incrementando el índice, si se llega al último índice, vuelve al índice 0
+            currentIndex = (currentIndex < img.length - 1) ? currentIndex + 1 : 0;
+            showImage(currentIndex);
+        }
+
+        // Se inicia el slideshow
+        showImage(currentIndex);
+    </script>
+
+    
+</body>
+</html>
