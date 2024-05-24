@@ -1,6 +1,8 @@
 .rowMenu {
     margin: 0;
     background-color: #000000D9;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .principal, .principal2 {
@@ -17,7 +19,7 @@
 }
 
 .principal2 {
-    background-color: black;
+    background-image: url("https://images6.alphacoders.com/553/553248.jpg");
 }
 
 .rowMargin {
@@ -33,11 +35,10 @@ h3 {
 
 .pie {
     background-color: #000000D9;
-    text-align: center;
-    font-family: 'Agency FB';
     color: white;
-    width: 100%;
-    height: 40px;
+    font-family: 'Agency FB';
+    padding: 10px 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .datos {
@@ -57,15 +58,25 @@ h3 {
 }
 
 .datos2 {
-    background: #F15A22; 
+    background-color: #F15A22;
     padding: 10px 20px; 
-    border-radius: 20px;
+    border-radius: 50px;
     font-family: 'Agency FB';
     color: white;
-    box-shadow: 7px 13px 37px black;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
     width: 100%; 
     max-width: 400px; 
     margin: 0 auto; 
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.datos2:hover {
+    background: linear-gradient(45deg, #F15A22, #6ab7ff);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 .datos2 h4 {
@@ -96,19 +107,45 @@ h3 {
 }
 
 .botones {
-    background-color: #F15A22;
-    border: none;
-    color: white;
+    display: inline-block;
+    margin: 10px 20px;
     padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
     font-family: 'Agency FB';
-    cursor: pointer;
-    margin: 0 10px;
-    border-radius: 5px;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #F15A22;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .botones:hover {
-    background-color: #D94C1A;
-    transform: scale(1.05);
+    background: linear-gradient(45deg, #F15A22, #6ab7ff);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.botones2 {
+    display: inline-block;
+    margin: 10px 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Agency FB';
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(45deg, #6ab7ff, #F15A22);
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.botones2:hover {
+    background: linear-gradient(45deg, #F15A22, #6ab7ff);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
