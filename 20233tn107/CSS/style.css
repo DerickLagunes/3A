@@ -145,3 +145,25 @@ h2{
     font-weight: bold;
     text-align: center;
 }
+
+#btnForm{
+    background-color: #0b91ff;
+    color: white;
+    border: none;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+#btnForm:hover{
+    background-color: #0b91ff;
+    color: white;
+    border: none;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    filter: brightness(0.8);
+}

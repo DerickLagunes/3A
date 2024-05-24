@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registroPersona.css">
+    <title>FORMULARIO</title>
+</head>
+<body>
+    
+    <div id="divForm">
+        <H1>Registrate</H1>
+        <form action="verPersona.html" method="GET">
+
+            <label class="label">
+                <input name="firstName" type="text" placeholder=" " class="input" required>
+                <span class="label_name">Nombres</span>
+            </label>
+
+            <label class="label">
+                <input name="lastName" type="text" placeholder=" " class="input" required>
+                <span class="label_name">Apellidos</span>
+            </label>
+
+            <label class="label">
+                <input name="email" type="email" placeholder=" " class="input" required>
+                <span class="label_name">Correo</span>
+            </label>
+            
+            <label class="label">
+                <input name="birthDate" type="date" placeholder=" " class="input" required>
+                <span class="label_name">Fecha de nacimiento</span>
+            </label>
+
+            <label class="label">
+                <input name="phoneNumber" type="tel" placeholder=" " class="input" required pattern="[0-9]{10}" title="Por favor ingresa un número de teléfono de 10 dígitos">
+                <span class="label_name">Telefono</span>
+            </label>
+
+            <label class="label">
+                <input name="user" type="text" placeholder=" " class="input" required>
+                <span class="label_name">Usuario</span>
+            </label>
+
+            <label class="label">
+                <input name="password" type="password" placeholder=" " class="input" required>
+                <span class="label_name">Contraseña</span>
+            </label>
+
+            <label class="label">
+                <input name="confirmPassword" type="password" placeholder=" " class="input" required>
+                <span class="label_name">Repita su Contraseña</span>
+            </label>
+
+            <button class="enviar" type="submit" value="Enviar">Enviar</button>
+
+        </form>
+</body>
+</html>
