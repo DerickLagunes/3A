@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Persona</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+
+        }
+        #informacionUsuario {
+            background: rgb(190, 0, 127);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 300px;
+            width: 100%;
+        }
+        h1, h2 {
+            margin: 10px 0;
+        }
+        p {
+            margin: 10px 0;
+        }
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body background="https://i.scdn.co/image/ab67616d0000b273f74269b6ebdb5ab2773c0be9">
+    <div id="informacionUsuario"></div>
+    <p id="mensajeError" style="color:red; text-align: center;"></p>
+
+    <script>
+        function obtenerEdad(fechaNacimiento) {
+            const hoy = new Date();
+            const fechaNac = new Date(fechaNacimiento);
+            let edad = hoy.getFullYear() - fechaNac.getFullYear();
+            const mes = hoy.getMonth() - fechaNac.getMonth();
+            if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNac.getDate())) {
+                edad--;
+            }
+            return edad;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const nombres = params.get('nombres');
+            const apellidos = params.get('apellidos');
+            const correo = params.get('correo');
+            const fechaNacimiento = params.get('fechaNacimiento');
+            const telefono = params.get('telefono');
+            const usuario = params.get('usuario');
+            const contrasena = params.get('contrasena');
+            const repetirContrasena = params.get('repetirContrasena');
+
+            const mensajeError = document.getElementById('mensajeError');
+
+            if (contrasena !== repetirContrasena) {
+                mensajeError.textContent = "Las contraseñas no coinciden";
+                return;
+            }
+
+            if (contrasena.length < 5) {
+                mensajeError.textContent = "La contraseña es insegura";
+                return;
+            }
+
+            const edad = obtenerEdad(fechaNacimiento);
+
+            document.getElementById('informacionUsuario').innerHTML = `
+                <h1>${nombres}</h1>
+                <h2>${apellidos}</h2>
+                <p><strong>Correo: </strong> <a href="mailto:${correo}">${correo}</a></p>
+                <p><strong>Teléfono: </strong> <a href="tel:${telefono}">${telefono}</a></p>
+                <p><strong>Edad: </strong>${edad} años</p>
+            `;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Persona</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            /*background-color: #000000;*/
+        }
+        form {
+            background: rgb(190, 0, 127);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #6f0055;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #490032;
+        }
+        p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body background="https://i.scdn.co/image/ab67616d0000b273f74269b6ebdb5ab2773c0be9">
+    <form id="registroForm" action="verPersona.html" method="GET" onsubmit="return validarFormulario()">
+        <label for="nombres">Nombres:</label>
+        <input type="text" id="nombres" name="nombres" required>
+        
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required>
+        
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" required>
+        
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+        
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" required>
+        
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required>
+        
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required>
+        
+        <label for="repetirContrasena">Repetir Contraseña:</label>
+        <input type="password" id="repetirContrasena" name="repetirContrasena" required>
+        
+        <p id="mensajeError" style="color:rgb(255, 255, 255);"></p>
+        
+        <button type="submit">Registrar</button>
+    </form>
+
+    <script>
+        function validarFormulario() {
+            const contrasena = document.getElementById('contrasena').value;
+            const repetirContrasena = document.getElementById('repetirContrasena').value;
+            const mensajeError = document.getElementById('mensajeError');
+
+            if (contrasena !== repetirContrasena) {
+                mensajeError.textContent = "Las contraseñas no coinciden";
+                return false;
+            }
+
+            if (contrasena.length < 5) {
+                mensajeError.textContent = "La contraseña es insegura";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
