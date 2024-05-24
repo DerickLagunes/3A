@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Mitski</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>Albums de Mitski.</h1>
+    <button id="botonSiguiente">Siguiente</button>
+    <button id="botonAnterior">Anterior</button>
+    <div id="carrusel img">
+        <img id="imgs" src='img/img1.jpeg'>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const imagenes = [
+                'img/img1.jpeg',
+                'img/img2.jpeg',
+                'img/img3.jpeg',
+                'img/img4.jpg',
+                'img/img5.jpeg',
+                'img/img6.jpeg',
+                'img/img7.jpeg'
+            ];
+            let indice = 0;
+            const imgs = document.getElementById('imgs');
+            const botonAnterior = document.getElementById('botonAnterior');
+            const botonSiguiente = document.getElementById('botonSiguiente');
+            function updateImage() {
+                imgs.src = imagenes[indice];
+            }
+            botonAnterior.addEventListener('click', () => {
+                indice = (indice > 0) ? indice - 1 : imagenes.length - 1;
+                updateImage();
+            });
+            botonSiguiente.addEventListener('click', () => {
+                indice = (indice < imagenes.length - 1) ? indice + 1 : 0;
+                updateImage();
+            });
+            updateImage();
+        });
+    </script>
+</body>
+</html>
