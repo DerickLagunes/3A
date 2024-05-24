@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>20233TN087</title>     
+    <title>Carrusel</title>     
     <link rel="shortcut icon" type="image/x-icon" href="https://i.pinimg.com/originals/42/34/4a/42344a3a55c3c39a6909d8c0d28ffb27.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
@@ -18,22 +18,23 @@
         <div class="col-md-2"></div>
     </div>
 
-    <div class="principal row rowMargin">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-            <section class="datos">
-                <h4><b>Información personal</b></h4>
-                <ul class="listaDatos">
-                    <li>Nombre: Ruiz Santos Orlando.</li>
-                    <li>Carrera y Grupo: 3°A.</li>
-                    <li>Correo: 20233tn087@utez.edu.mx.</li>
-                    <li>Matricula: 20233tn087.</li>
-                    <li>Estudios medio superior: Cbtis 166 "Pablo Torres Burgos" </li>
-                    <li>Pasatiempos: Jugar videojuegos, ver peliculas de terror y salir con mis amigos.</li>
-                </ul> 
-            </section>     
+    <div class="principal2 row rowMargin">
+        <div class="col-md-3 d-flex justify-content-center align-items-center">
+            <button class="botones" id="antesBtn">Anterior</button>
         </div>
-        <div class="col-md-3"></div>  
+        <div class="col-md-6">
+            <div class="slider">
+                <div class="imagenes">
+                    <img id="carruselImg" src="https://c4.wallpaperflare.com/wallpaper/892/763/811/combat-juego-luchas-mortal-wallpaper-preview.jpg" alt="Slider Image" class="img-fluid">
+                </div>
+            </div><br>
+            <section class="datos2">
+                <h4><b>Esos son mis videojuegos favoritos</b></h4>
+            </section>  
+        </div>
+        <div class="col-md-3 d-flex justify-content-center align-items-center">
+            <button class="botones" id="despuesBtn">Siguiente</button>
+        </div>  
     </div>
 
     <div class="row pie rowMargin">        
@@ -43,6 +44,6 @@
             </footer>
         </div>  
     </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
-
