@@ -1,0 +1,39 @@
+<html>
+<head>
+    <script>src="main.js"</script>
+</head>
+<body>
+    <h1> Registro de examen</h1>
+    <form action="" method="get">
+        <label> Nombre del Examen <input name="nombreExamen" type="text" placeholder="Nombre del Examen" maxlength="40"></label>
+        <br>
+        <label> Email: <input name="emailExamen" type="email" placeholder="Tu email aquí" maxlength="50"> </label>
+        <br>
+        <label> Contraseña: <input name="contraseñaExamen" type="password" placeholder="Tu contraseña aquí" maxlength="15"></label>
+        <br>
+        <label> Descripción del examen <input name="descripcionExamen" type="text" placeholder="descripción del examen"> </label>
+        <br>
+        <label> Fecha <input name="fechaExamen" type="date" value=""></label>
+        <br>
+        <label> Número de preguntas <input name="numeroPreguntas" type="number" placeholder="número de reactivos"></label>
+        <br>
+        <label> Esta activo? <select name="activoExamen">
+            <option value="Si"> Si </option>
+            <option value="No"> No </option>
+        </select>
+        </label>
+        <br>
+        <input type="submit" value="Enviar Formulario">
+    </form>
+    <script>
+        getParameter = (key) => {
+            address = window.location.search;
+            //Objeto de tipo URLSearchParams
+            parameterList = new URLSearchParams(address);
+            //Regresa el valor del parametro "key"
+            return parameterList.get(key);
+        }
+        console.log(getParameter)
+    </script>
+</body>
+</html>
