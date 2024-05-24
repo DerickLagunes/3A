@@ -1,0 +1,112 @@
+body {
+  background-color: #F1D2EB;
+  background-image: url('../img/Fondo.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  font-size: 16px; 
+  color: #53015F; 
+  line-height: 1.5;
+}
+
+
+h1, h2 {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: bold;
+}
+h3 {
+  font-size: 18px;
+  color: #D05098;
+  font-weight: bold;
+  line-height: 1.2;
+} 
+
+h4, h5, h6 {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: bold;
+}
+
+
+
+
+
+
+#imagenAtras {
+  background-color: #7935bd;
+  border: none;
+  color: #78ccfa;
+  padding: 4px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+#imagenAtras:active {
+  background-color: #4d2377;
+}
+
+
+#imagenAdelante {
+  background-color: #7935bd;
+  border: none;
+  color: #78ccfa;
+  padding: 4px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+#imagenAdelante:active {
+  background-color: #4d2377;
+}
+
+
+
+
+
+#colorM {
+  color:#81c846;
+}
+
+#colorS {
+  color:#78ccfa;
+}
+
+#colorN {
+  color:#FF8C99;
+}
+
+#colorY {
+  color:#8e57ac;
+}
+
+
+
+
+
+.carruselfeo {
+    width: 200px;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  #imagenCarrusel {
+    max-width: 150px;
+    height: 150px;
+    margin-right: 10px;
+  }
+  
+  .controlesfeos {
+    margin-top: 10px;
+  }
+
