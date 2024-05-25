@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Persona</title>
+</head>
+<body>
+    <h1 id="nombres"></h1>
+    <h2 id="apellidos"></h2>
+    <a id="correo" href=""></a><br>
+    <a id="telefono" href=""></a><br>
+    <p id="edad"></p>
+
+    <script>
+        function getParameterByName(name) {
+            const url = window.location.search;
+            const params = new URLSearchParams(url);
+            return params.get(name);
+        }
+
+        function calculateAge(fechaNacimiento) {
+            const today = new Date();
+            const birthDate = new Date(fechaNacimiento);
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            return age;
+        }
+
+        document.getElementById('nombres').textContent = getParameterByName('nombres');
+        document.getElementById('apellidos').textContent = getParameterByName('apellidos');
+        
+        const correo = getParameterByName('correo');
+        document.getElementById('correo').textContent = correo;
+        document.getElementById('correo').href = `mailto:${correo}`;
+        
+        const telefono = getParameterByName('telefono');
+        document.getElementById('telefono').textContent = telefono;
+        document.getElementById('telefono').href = `tel:${telefono}`;
+        
+        const fechaNacimiento = getParameterByName('fechaNacimiento');
+        const edad = calculateAge(fechaNacimiento);
+        document.getElementById('edad').textContent = `Edad: ${edad} años`;
+    </script>
+</body>
+</html>
