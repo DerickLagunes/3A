@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Persona</title>
+</head>
+<body>
+    <h1>Registro de Persona</h1>
+    <form id="registroForm" action="verPersona.html" method="GET" onsubmit="return validateForm()">
+        <label for="nombres">Nombres:</label>
+        <input type="text" id="nombres" name="nombres" required><br><br>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required><br><br>
+
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" required><br><br>
+
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required><br><br>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required><br><br>
+
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required><br><br>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required><br><br>
+
+        <label for="repetirContrasena">Repetir Contraseña:</label>
+        <input type="password" id="repetirContrasena" name="repetirContrasena" required><br><br>
+
+        <p id="mensaje" style="color: red;"></p>
+        
+        <button type="submit">Registrar</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            const contrasena = document.getElementById('contrasena').value;
+            const repetirContrasena = document.getElementById('repetirContrasena').value;
+            const mensaje = document.getElementById('mensaje');
+
+            if (contrasena !== repetirContrasena) {
+                mensaje.textContent = 'Las contraseñas no coinciden';
+                return false;
+            }
+
+            if (contrasena.length < 5) {
+                mensaje.textContent = 'La contraseña es insegura';
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
