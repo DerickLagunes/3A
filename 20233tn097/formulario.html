@@ -69,26 +69,7 @@
         <input type="submit" value="Registrar datos">
     </form>
 
-    <!-- Creacion de seccion de respuesta formulario para cuando se registren los datos -->
-    <div id="respuestaFormulario" style="display:none;">
-        <h1>Estos son tus datos:</h1>
-        <h1 id="nombreCompleto"></h1>
-        <h2 id="apellidos"></h2>
-        <p>Email: <a id="email"></a></p>
-        <p>Teléfono: <a id="telefono"></a></p>
-        <p id="edad"></p>
-        <p><span id="usuario"></span></p> 
-    </div>
-
     <script>
-        getParameter = (key) => {
-            // url de la ventana actual
-            address = window.location.search; 
-            //Objeto de tipo URLSearchParams
-            parameterList = new URLSearchParams(address);
-            //Regresa el valor del parámetro “key”
-            return parameterList.get(key);
-        }
         document.getElementById("registroForm").addEventListener("submit", function(event) {
             event.preventDefault(); // Evitar que el formulario se envíe
 
@@ -96,7 +77,7 @@
             const nombre = document.getElementsByName("nombrePersona")[0].value;
             const apellidos = document.getElementsByName("apellidosPersona")[0].value;
             const email = document.getElementsByName("emailPersona")[0].value;
-            const fechaNacimiento = new Date(document.getElementsByName("fechaNacimiento")[0].value);
+            const fechaNacimiento = document.getElementsByName("fechaNacimiento")[0].value;
             const telefono = document.getElementsByName("numeroTelefono")[0].value;
             const usuario = document.getElementsByName("nombreUsuario")[0].value; 
             const contraseña = document.getElementsByName("contraseñaUsuario")[0].value;
@@ -113,21 +94,17 @@
                 document.getElementById("errorMensaje").innerText = ""; // Limpiar el mensaje de error
             }
 
-            // Mostrar la información del usuario y calculo de edad solo por año
-            const hoy = new Date();
-            const edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
-            document.getElementById("nombreCompleto").innerText = nombre;
-            document.getElementById("apellidos").innerText = apellidos;
-            document.getElementById("email").innerText = email;
-            document.getElementById("email").href = "mailto:" + email;
-            document.getElementById("telefono").innerText = telefono;
-            document.getElementById("telefono").href = "tel:" + telefono;
-            document.getElementById("edad").innerText = "Edad: " + edad + " años";
-            document.getElementById("usuario").innerText = "Usuario: " + usuario; // Mostrar el nombre de usuario
+            // Construye la URL con los parámetros del formulario
+            const params = new URLSearchParams();
+            params.append('nombre', nombre);
+            params.append('apellidos', apellidos);
+            params.append('email', email);
+            params.append('fechaNacimiento', fechaNacimiento);
+            params.append('telefono', telefono);
+            params.append('usuario', usuario);
 
-            // Mostrar la sección de respuesta del formulario y ocultar el formulario de registro
-            document.getElementById("respuestaFormulario").style.display = "block";
-            document.getElementById("registroForm").style.display = "none";
+            // Redirigir a la nueva página con los parámetros
+            window.location.href = `respuesta.html?${params.toString()}`;
         });
     </script>
 </body>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del Usuario</title>
+    <style>
+         /* Estilos generales para el cuerpo de la página */
+         body {
+            background-color: rgb(22, 30, 48);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+        }
+        /* Estilos para el título principal */
+        h1 {
+            font-size: 28px;
+        }
+        /* Estilos para el subtítulo */
+        h2 {
+            font-size: 24px;
+        }  
+    </style>
+</head>
+<body>
+    <div id="respuestaFormulario">
+        <h1 id="nombreCompleto"></h1>
+        <h2 id="apellidos"></h2>
+        <p>Email: <a id="email"></a></p>
+        <p>Teléfono: <a id="telefono"></a></p>
+        <p id="edad"></p>
+        <p><span id="usuario"></span></p> 
+    </div>
+
+    <script>
+        function getParameter(key) {
+            // Obtiene la URL actual
+            const address = window.location.search; 
+            const parameterList = new URLSearchParams(address);
+            // Regresar el valor del parámetro “key”
+            return parameterList.get(key);
+        }
+
+        // Captura los parámetros de la URL
+        const nombre = getParameter('nombre');
+        const apellidos = getParameter('apellidos');
+        const email = getParameter('email');
+        const fechaNacimiento = new Date(getParameter('fechaNacimiento'));
+        const telefono = getParameter('telefono');
+        const usuario = getParameter('usuario');
+
+        // Calcular la edad SOLO POR AÑO
+        const hoy = new Date();
+        const edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+
+        // Muestra la información del registro
+        document.getElementById("nombreCompleto").innerText = nombre;
+        document.getElementById("apellidos").innerText = apellidos;
+        document.getElementById("email").innerText = email;
+        document.getElementById("email").href = "mailto:" + email;
+        document.getElementById("telefono").innerText = telefono;
+        document.getElementById("telefono").href = "tel:" + telefono;
+        document.getElementById("edad").innerText = "Edad: " + edad + " años";
+        document.getElementById("usuario").innerText = "Usuario: " + usuario;
+    </script>
+</body>
+</html>
