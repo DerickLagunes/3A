@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Persona</title>     
+    <link rel="shortcut icon" type="image/x-icon" href="https://i.pinimg.com/originals/42/34/4a/42344a3a55c3c39a6909d8c0d28ffb27.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="row rowMenu">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 text-center">
+            <a href="20233tn087.html" class="botones2">Inicio</a>
+            <a href="carrusel.html" class="botones2">Carrusel</a>
+            <a href="registroPersona.html" class="botones2">Registro</a>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+    <div class="principal row rowMargin">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <section class="datos4">
+                <h1 id="nombre"></h1>
+                <h2 id="apellido"></h2>
+                <p id="correo"></p>
+                <p id="telefono"></p>
+                <p id="edad"></p>
+            </section>     
+        </div>
+        <div class="col-md-3"></div>  
+    </div>
+    <script>
+        function getParameter(key) {
+            const address = window.location.search;
+            const parameterList = new URLSearchParams(address);
+            return parameterList.get(key);
+        }
+
+        window.onload = () => {
+            const nombres = getParameter("nombres");
+            const apellidos = getParameter("apellidos");
+            const correo = getParameter("correo");
+            const fechaNacimiento = getParameter("fechaNacimiento");
+            const telefono = getParameter("telefono");
+
+            document.getElementById("nombre").textContent = nombres;
+            document.getElementById("apellido").textContent = apellidos;
+            document.getElementById("correo").innerHTML = `Correo: <a href="mailto:${correo}">${correo}</a>`;
+            document.getElementById("telefono").innerHTML = `Teléfono: <a href="tel:${telefono}">${telefono}</a>`;
+
+            const hoy = new Date();
+            const nacimiento = new Date(fechaNacimiento);
+            let edad = hoy.getFullYear() - nacimiento.getFullYear();
+            const mes = hoy.getMonth() - nacimiento.getMonth();
+            if (mes < 0 || (mes === 0 && hoy.getDate() < nacimiento.getDate())) {
+                edad--;
+            }
+
+            document.getElementById("edad").textContent = `Edad: ${edad} años`;
+        };
+    </script>
+</body>
+</html>

@@ -5,14 +5,30 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.rowMargin {
+    margin: 0;
+}
+
+
+
 .principal, .principal2 {
     background-size: cover; 
     background-position: center; 
-    height: 600px;
+    height: 100vh; /* Utiliza el 100% de la altura de la ventana */
     display: flex;
     align-items: center; 
     justify-content: center; 
 }
+
+.principal3 {
+    background-size: cover; 
+    background-position: center; 
+    height: 850px; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
 
 .principal {
     background-image: url("https://www.xtrafondos.com/descargar.php?id=3229&resolucion=1280x720");
@@ -22,24 +38,11 @@
     background-image: url("https://images6.alphacoders.com/553/553248.jpg");
 }
 
-.rowMargin {
-    margin: 0;
+.principal3 {
+    background: linear-gradient(45deg, #F15A22, #6ab7ff);
 }
 
-h3 {
-    font-size: 3em;
-    text-align: center;
-    color: white;
-    font-family: 'Helvetica Neue';
-}
 
-.pie {
-    background-color: #000000D9;
-    color: white;
-    font-family: 'Agency FB';
-    padding: 10px 0;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-}
 
 .datos {
     background: #F15A22; 
@@ -84,6 +87,53 @@ h3 {
     text-align: center;
 }
 
+.datos3 {
+    background: #F15A22; 
+    padding: 30px;
+    border-radius: 4px;
+    font-family: 'Agency FB';
+    color: white;
+    box-shadow: 7px 13px 37px black;
+    border-radius: 20px;
+    width: 600px;
+    height: 830px;
+}
+
+.datos3 h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.datos4 {
+    background-color: #F15A22;
+    padding: 10px 20px; 
+    border-radius: 50px;
+    font-family: 'Agency FB';
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    width: 100%; 
+    max-width: 400px; 
+    margin: 0 auto; 
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.datos4:hover {
+    background: linear-gradient(45deg, #F15A22, #6ab7ff);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.datos4 h4 {
+    font-size: 18px; 
+    text-align: center;
+}
+
+
+
 .slider {
     display: flex;
     align-items: center;
@@ -105,6 +155,9 @@ h3 {
     object-fit: contain; 
     border-radius: 10px;
 }
+
+
+
 
 .botones {
     display: inline-block;

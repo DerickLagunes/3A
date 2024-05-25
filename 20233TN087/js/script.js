@@ -1,3 +1,4 @@
+// Carrusel
 document.addEventListener("DOMContentLoaded", function() {
     const images = [
         "https://c4.wallpaperflare.com/wallpaper/892/763/811/combat-juego-luchas-mortal-wallpaper-preview.jpg",
@@ -29,3 +30,53 @@ document.addEventListener("DOMContentLoaded", function() {
     
     showImage(indiceActual);
 });
+
+
+//registroPersona
+document.getElementById('registroFormulario').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const contrasena = document.getElementById('contrasena').value;
+    const repetirContrasena = document.getElementById('repetirContrasena').value;
+
+    if (contrasena !== repetirContrasena) {
+        Swal.fire({
+            icon: 'error',
+            text: 'Las contraseñas no coinciden.',
+            background: 'black',
+            color: 'white',
+            confirmButtonColor: '#F15A22',
+            confirmButtonText: "Aceptar",
+        });
+        return;
+    }
+
+    if (contrasena.length <= 5) {
+        Swal.fire({
+            icon: 'info',
+            text: 'Advertencia: su contraseña es insegura.',
+            background: 'black',
+            color: 'white',
+            confirmButtonColor: '#F15A22',
+            confirmButtonText: "Aceptar",
+        });
+        return;
+    }
+
+    const nombres = document.getElementById('nombres').value;
+    const apellidos = document.getElementById('apellidos').value;
+    const correo = document.getElementById('correo').value;
+    const fechaNacimiento = document.getElementById('fechaNacimiento').value;
+    const telefono = document.getElementById('telefono').value;
+
+    const params = new URLSearchParams({
+        nombres: nombres,
+        apellidos: apellidos,
+        correo: correo,
+        fechaNacimiento: fechaNacimiento,
+        telefono: telefono,
+    });
+
+    window.location.href = `verPersona.html?${params.toString()}`;
+});
+

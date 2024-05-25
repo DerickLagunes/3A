@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Persona</title>     
+    <link rel="shortcut icon" type="image/x-icon" href="https://i.pinimg.com/originals/42/34/4a/42344a3a55c3c39a6909d8c0d28ffb27.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+    <div class="row rowMenu">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 text-center">
+            <a href="20233tn087.html" class="botones2">Inicio</a>
+            <a href="carrusel.html" class="botones2">Carrusel</a>
+            <a href="registroPersona.html" class="botones2">Registro</a>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+    <div class="principal3 row rowMargin">
+        <div class="col-md-12 d-flex justify-content-center align-items-center">
+            <div class="datos3">
+                <h2 class="text-center">Registro de Persona</h2>
+                <form id="registroFormulario">
+                    <div class="form-group">
+                        <label for="nombres">Nombres:</label>
+                        <input type="text" class="form-control" id="nombres" name="nombres" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" class="form-control" id="apellidos" name="apellidos" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo:</label>
+                        <input type="email" class="form-control" id="correo" name="correo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                        <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="usuario">Usuario:</label>
+                        <input type="text" class="form-control" id="usuario" name="usuario" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contrasena">Contraseña:</label>
+                        <input type="password" class="form-control" id="contrasena" name="contrasena" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="repetirContrasena">Repetir Contraseña:</label>
+                        <input type="password" class="form-control" id="repetirContrasena" name="repetirContrasena" required>
+                    </div>
+                    <p align="center">
+                    <button type="submit" class="botones">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
