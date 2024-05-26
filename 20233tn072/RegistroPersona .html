@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registro de Persona</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>Registro de Persona</h1>
+    <form action="" method="get">
+        <fieldset>
+            <legend>Detalles de la persona</legend>
+            <label for="nombre">Nombres:</label>
+            <input id="nombre" name="nombre" type="text" maxlength="40" placeholder="Ingrese sus nombres" required>
+            <br>
+            <label for="apellidos">Apellidos:</label>
+            <input id="apellidos" name="apellidos" type="text" maxlength="40" placeholder="Ingrese sus apellidos" required>
+            <br>
+            <label for="correo">Correo:</label>
+            <input id="correo" name="correo" type="email" placeholder="Ingrese su correo" required>
+            <br>
+            <label for="fechaNacimiento">Fecha de nacimiento:</label>
+            <input id="fechaNacimiento" name="fechaNacimiento" type="date" required>
+            <br>
+            <label for="telefono">Teléfono:</label>
+            <input id="telefono" name="telefono" type="tel" placeholder="Ingrese su teléfono" required>
+            <br>
+            <label for="usuario">Usuario:</label>
+            <input id="usuario" name="usuario" type="text" maxlength="20" placeholder="Ingrese su nombre de usuario" required>
+            <br>
+            <label for="contrasena">Contraseña:</label>
+            <input id="contrasena" name="contrasena" type="password" placeholder="Ingrese su contraseña" required>
+            <br>
+            <label for="repetirContrasena">Repetir contraseña:</label>
+            <input id="repetirContrasena" name="repetirContrasena" type="password" placeholder="Repita su contraseña" required>
+            <br>
+            <button type="submit">Enviar</button>
+        </fieldset>
+    </form>
+    <script>
+        getParameter = (key) => {
+            address = window.location.search; // URL de la ventana actual
+            parameterList = new URLSearchParams(address);
+            return parameterList.get(key);
+        }
+        console.log(getParameter("nombre"));
+    </script>
+</body>
+</html>

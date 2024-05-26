@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ver Persona</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1 id="nombre"></h1>
+    <h2 id="apellidos"></h2>
+    <p>Correo: <a id="correo" href=""></a></p>
+    <p>Teléfono: <a id="telefono" href=""></a></p>
+    <p id="edad"></p>
+    <p id="mensaje"></p>
+    <script>
+        // Función para obtener el valor de un parámetro en la URL
+        function getParameter(key) {
+            const address = window.location.search; // URL de la ventana actual
+            const parameterList = new URLSearchParams(address);
+            return parameterList.get(key);
+        }
+
+        // Función para calcular la edad a partir de la fecha de nacimiento
+        function calcularEdad(fechaNacimiento) {
+            const hoy = new Date();
+            const fechaNac = new Date(fechaNacimiento);
+            let edad = hoy.getFullYear() - fechaNac.getFullYear();
+            const mes = hoy.getMonth() - fechaNac.getMonth();
+            if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNac.getDate())) {
+                edad--;
+            }
+            return edad;
+        }
+
+        // Obtener parámetros de la URL
+        const nombre = getParameter("nombre");
+        const apellidos = getParameter("apellidos");
+        const correo = getParameter("correo");
+        const telefono = getParameter("telefono");
+        const fechaNacimiento = getParameter("fechaNacimiento");
+        const contrasena = getParameter("contrasena");
+        const repetirContrasena = getParameter("repetirContrasena");
+
+        // Mostrar los valores en los elementos correspondientes
+        document.getElementById("nombre").innerText = nombre;
+        document.getElementById("apellidos").innerText = apellidos;
+        document.getElementById("correo").innerText = correo;
+        document.getElementById("correo").href = `mailto:${correo}`;
+        document.getElementById("telefono").innerText = telefono;
+        document.getElementById("telefono").href = `tel:${telefono}`;
+        document.getElementById("edad").innerText = `Edad: ${calcularEdad(fechaNacimiento)} años`;
+
+        // Verificar contraseñas
+        const mensaje = document.getElementById("mensaje");
+        if (contrasena !== repetirContrasena) {
+            mensaje.innerText = "Las contraseñas no coinciden";
+        } else if (contrasena.length < 5) {
+            mensaje.innerText = "Advertencia: su contraseña es insegura";
+        }
+    </script>
+</body>
+</html>
