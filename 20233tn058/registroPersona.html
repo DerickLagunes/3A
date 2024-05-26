@@ -4,55 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Persona</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://www.tuexperto.com/wp-content/uploads/2022/01/paginas-descargar-fondos-de-pantalla.jpg'); /* Reemplaza con la URL de tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px #000;
+        }
+        form {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            box-sizing: border-box;
+            margin-left: 20px; 
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="tel"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #02228b;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button:hover {
+            background-color: #ff016b;
+        }
+        #mensaje {
+            color: rgb(255, 0, 242);
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Registro de Persona</h1>
     <form id="registroForm" action="verPersona.html" method="GET" onsubmit="return validateForm()">
+        <h1>Registro de Persona</h1>
         <label for="nombres">Nombres:</label>
-        <input type="text" id="nombres" name="nombres" required><br><br>
-
+        <input type="text" id="nombres" name="nombres" required>
         <label for="apellidos">Apellidos:</label>
-        <input type="text" id="apellidos" name="apellidos" required><br><br>
-
+        <input type="text" id="apellidos" name="apellidos" required>
         <label for="correo">Correo:</label>
-        <input type="email" id="correo" name="correo" required><br><br>
-
+        <input type="email" id="correo" name="correo" required>
         <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required><br><br>
-
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
         <label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono" required><br><br>
-
+        <input type="tel" id="telefono" name="telefono" required>
         <label for="usuario">Usuario:</label>
-        <input type="text" id="usuario" name="usuario" required><br><br>
-
+        <input type="text" id="usuario" name="usuario" required>
         <label for="contrasena">Contraseña:</label>
-        <input type="password" id="contrasena" name="contrasena" required><br><br>
-
-        <label for="repetirContrasena">Repetir Contraseña:</label>
-        <input type="password" id="repetirContrasena" name="repetirContrasena" required><br><br>
-
-        <p id="mensaje" style="color: red;"></p>
-        
+        <input type="password" id="contrasena" name="contrasena" required>
+        <label for="repetirContrasena">Confirmar Contraseña:</label>
+        <input type="password" id="repetirContrasena" name="repetirContrasena" required>
+        <p id="mensaje"></p>
         <button type="submit">Registrar</button>
     </form>
-
     <script>
         function validateForm() {
             const contrasena = document.getElementById('contrasena').value;
             const repetirContrasena = document.getElementById('repetirContrasena').value;
             const mensaje = document.getElementById('mensaje');
-
             if (contrasena !== repetirContrasena) {
-                mensaje.textContent = 'Las contraseñas no coinciden';
+                mensaje.textContent = 'Las contraseñas no son iguales';
                 return false;
             }
-
             if (contrasena.length < 5) {
-                mensaje.textContent = 'La contraseña es insegura';
+                mensaje.textContent = 'La contraseña es no es apropiada';
                 return false;
             }
-
             return true;
         }
     </script>

@@ -4,21 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver Persona</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://articles-img.sftcdn.net/t_articles/auto-mapping-folder/sites/2/2023/04/tierra-horizonte-planeta.jpg'); 
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1, h2 {
+            margin: 10px 0;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
-    <h1 id="nombres"></h1>
-    <h2 id="apellidos"></h2>
-    <a id="correo" href=""></a><br>
-    <a id="telefono" href=""></a><br>
-    <p id="edad"></p>
-
+    <div class="container">
+        <h1 id="nombres"></h1>
+        <h2 id="apellidos"></h2>
+        <a id="correo" href=""></a>
+        <a id="telefono" href=""></a>
+        <p id="edad"></p>
+    </div>
     <script>
         function getParameterByName(name) {
             const url = window.location.search;
             const params = new URLSearchParams(url);
             return params.get(name);
         }
-
         function calculateAge(fechaNacimiento) {
             const today = new Date();
             const birthDate = new Date(fechaNacimiento);
@@ -29,18 +68,14 @@
             }
             return age;
         }
-
         document.getElementById('nombres').textContent = getParameterByName('nombres');
         document.getElementById('apellidos').textContent = getParameterByName('apellidos');
-        
         const correo = getParameterByName('correo');
         document.getElementById('correo').textContent = correo;
         document.getElementById('correo').href = `mailto:${correo}`;
-        
         const telefono = getParameterByName('telefono');
         document.getElementById('telefono').textContent = telefono;
         document.getElementById('telefono').href = `tel:${telefono}`;
-        
         const fechaNacimiento = getParameterByName('fechaNacimiento');
         const edad = calculateAge(fechaNacimiento);
         document.getElementById('edad').textContent = `Edad: ${edad} años`;
