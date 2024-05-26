@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Persona</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        #mensaje {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="nombres"></h1>
+    <h2 id="apellidos"></h2>
+    <p>Correo: <a id="correo" href="#"></a></p>
+    <p>Teléfono: <a id="telefono" href="#"></a></p>
+    <p id="edad"></p>
+    <p id="mensaje"></p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const params = new URLSearchParams(window.location.search);
+
+            const nombres = params.get('nombres');
+            const apellidos = params.get('apellidos');
+            const correo = params.get('correo');
+            const fechaNacimiento = params.get('fechaNacimiento');
+            const telefono = params.get('telefono');
+            const contraseña = params.get('contraseña');
+            const repetirContraseña = params.get('repetirContraseña');
+
+            document.getElementById('nombres').textContent = nombres;
+            document.getElementById('apellidos').textContent = apellidos;
+            document.getElementById('correo').textContent = correo;
+            document.getElementById('correo').href = `mailto:${correo}`;
+            document.getElementById('telefono').textContent = telefono;
+            document.getElementById('telefono').href = `tel:${telefono}`;
+
+            const fechaNacimientoDate = new Date(fechaNacimiento);
+            const hoy = new Date();
+            let edad = hoy.getFullYear() - fechaNacimientoDate.getFullYear();
+            const diferenciaMeses = hoy.getMonth() - fechaNacimientoDate.getMonth();
+            if (diferenciaMeses < 0 || (diferenciaMeses === 0 && hoy.getDate() < fechaNacimientoDate.getDate())) {
+                edad--;
+            }
+            document.getElementById('edad').textContent = `Edad: ${edad} años`;
+
+            const mensaje = document.getElementById('mensaje');
+            if (contraseña !== repetirContraseña) {
+                mensaje.textContent = "Las contraseñas no coinciden";
+            } else if (contraseña.length < 5) {
+                mensaje.textContent = "Advertencia: su contraseña es insegura";
+            }
+        });
+    </script>
+</body>
+</html>
