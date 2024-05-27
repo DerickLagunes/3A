@@ -1,0 +1,31 @@
+<!DOCTYPE html5>
+<html lang="es">
+
+<head>
+    <title>Cesar Emilio</title>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="relative">
+        <nav class="flex flex-row-reverse flex-end bg-fuchsia-500 border-b border-white-100 pr-8 hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-green-500 hover:shadow-inner">
+            <a href="registroPersona.html" class="text-white text-xl p-4 hover:bg-sky-700 w-32 text-center">Volver</a>
+        </nav>
+        <div class="w-full bg-slate-900 min-h-full text-white flex items-start items-center justify-start lg:justify-center">
+            <div class="flex flex-col items-start w-full lg:w-1/2 min-w-80 max-w-120 bg-slate-600 py-24 px-8">
+                <h1 class="block text-3xl self-center">Datos registrados</h1>
+                <h1 class="block" id="name">Nombre/s: </h1>
+                <h2 id="last_name">Apellido/s: </h2>
+                <p class="block " id="edad">Edad: </p>
+                <p class="">Correo: <a class="text-blue-500 hover:text-blue-300" id="email" href="#"></a></p>
+                <p class="">Teléfono: <a class="text-blue-500 hover:text-blue-300" id="telephone" href="#"></a></p>
+                <p id="contra" hidden class="text-pink-600"></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="verPersona.js"></script>

@@ -1,0 +1,79 @@
+<!DOCTYPE html5>
+<html lang="es">
+
+<head>
+    <title>Cesar Emilio</title>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="relative">
+        <nav class="flex flex-row-reverse flex-end bg-fuchsia-500 border-b border-white-100 pr-8 hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-green-500 hover:shadow-inner">
+            <a href="20233tn076.html" class="text-white text-xl p-4 hover:bg-sky-700 w-32 text-center">Volver</a>
+        </nav>
+        <div class="bg-slate-900 flex md:items-center justify-center min-h-full">
+            <main class="md:my-32 md:w-4/5 bg-slate-800 md:rounded-lg p-8 w-full h-full max-w-2xl">
+                <form action="verPersona.html" method="GET" class="flex flex-col">
+                    <div class="relative">
+                        <input required autocomplete="off" name="name" type="text" class="peer w-full py-2.5 text-sm text-white mb-8 border-b border-white outline-none bg-transparent">
+                        <label class="absolute pointer-events-none transition-all duration-300 ease-in-out top-[-10px] left-0 text-[#03a9f4] text-xs">
+                            Nombre
+                        </label>
+                    </div>
+                    <div class="relative">
+                        <input required autocomplete="off" name="last_name" type="text" class="peer w-full py-2.5 text-sm text-white mb-8 border-b border-white outline-none bg-transparent">
+                        <label class="absolute pointer-events-none transition-all duration-300 ease-in-out top-[-10px] left-0 text-[#03a9f4] text-xs">
+                            Apellidos
+                        </label>
+                    </div>
+                    <div class="relative">
+                        <input required autocomplete="off" name="email" type="email" class="w-full py-2.5 text-sm text-white mb-8 border-b border-white outline-none bg-transparent invalid:border-pink-500 invalid:mb-2 invalid:text-pink-600 peer" placeholder="ejemplo@gmail.com">
+                        <label class="absolute pointer-events-none transition-all duration-300 ease-in-out top-[-10px] left-0 text-[#03a9f4] text-xs">
+                            Correo
+                        </label>
+                        <p class="hidden peer-invalid:block text-pink-600 text-sm mb-6">
+                            Ingresa un correo válido  °՞(ᗒ﹏ᗕ)՞°
+                        </p>
+                    </div>
+                    <div class="relative">
+                        <input required autocomplete="off" name="date_of_birth" type="date" class="peer w-full py-2.5 text-sm text-white mb-8 border-b border-white outline-none bg-transparent">
+                        <label class="absolute pointer-events-none transition-all duration-300 ease-in-out top-[-10px] left-0 text-[#03a9f4] text-xs">
+                            Fecha de Nacimiento
+                        </label>
+                    </div>
+                    <div class="relative">
+                        <input required autocomplete="off" name="telephone" type="tel" pattern="[0-9]{10}" class="peer w-full py-2.5 text-sm text-white mb-8 border-b border-white outline-none bg-transparent">
+                        <label class="absolute pointer-events-none transition-all duration-300 ease-in-out top-[-10px] left-0 text-[#03a9f4] text-xs">
+                            Teléfono
+                        </label>
+                    </div>
+                    <div class="relative">
+                        <input required autocomplete="off" name="user" type="text" class="peer w-full py-2.5 text-sm text-white mb-8 border-b border-white outline-none bg-transparent">
+                        <label class="absolute pointer-events-none transition-all duration-300 ease-in-out top-[-10px] left-0 text-[#03a9f4] text-xs">
+                            Usuario
+                        </label>
+                    </div>
+                    <div class="relative">
+                        <input required autocomplete="off" name="password" type="password" class="peer w-full py-2.5 text-sm text-white mb-8 border-b border-white outline-none bg-transparent">
+                        <label class="absolute pointer-events-none transition-all duration-300 ease-in-out top-[-10px] left-0 text-[#03a9f4] text-xs">
+                            Contraseña
+                        </label>
+                    </div>
+                    <div class="relative">
+                        <input required autocomplete="off" name="confirm_password" type="password" class="peer w-full py-2.5 text-sm text-white mb-8 border-b border-white outline-none bg-transparent">
+                        <label class="absolute pointer-events-none transition-all duration-300 ease-in-out top-[-10px] left-0 text-[#03a9f4] text-xs">
+                            Confirmar Contraseña
+                        </label>
+                    </div>
+                    <button type="submit" class="bg-slate-600 text-white w-32 self-center py-1 ">
+                        Enviar
+                    </button>
+                </form>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
