@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Datos Registrados</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Datos Registrados</h1>
+    <div id="datosContainer"></div>
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const datosContainer = document.getElementById('datosContainer');
+
+            const nombre = urlParams.get('Nombre');
+            const apellido = urlParams.get('Apellido');
+            const correo = urlParams.get('Correo');
+            const fechaNacimiento = urlParams.get('Fecha');
+            const telefono = urlParams.get('Telefono');
+            const usuario = urlParams.get('usuario');
+            const contrasena = urlParams.get('contrasena');
+
+            // Calcula la edad
+            const calcularEdad = (fecha) => {
+                const hoy = new Date();
+                const nacimiento = new Date(fecha);
+                let edad = hoy.getFullYear() - nacimiento.getFullYear();
+                const mes = hoy.getMonth() - nacimiento.getMonth();
+                if (mes < 0 || (mes === 0 && hoy.getDate() < nacimiento.getDate())) {
+                    edad--;
+                }
+                return edad;
+            };
+
+            const edad = calcularEdad(fechaNacimiento);
+
+            // Construir HTML con los datos
+            let datosHTML = `
+                <h1>${nombre}</h1>
+                <h2>${apellido}</h2>
+                <p><strong>Correo:</strong> <a href="mailto:${correo}">${correo}</a></p>
+                <p><strong>Teléfono:</strong> <a href="tel:${telefono}">${telefono}</a></p>
+                <p><strong>Edad:</strong> ${edad} años</p>
+                <p><strong>Usuario:</strong> ${usuario}</p>
+            `;
+            
+            datosContainer.innerHTML = datosHTML;
+        }
+    </script>
+</body>
+</html>
+
