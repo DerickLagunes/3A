@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registro</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="css/estilos.css">
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <script>
+        getParameter = (key) => {
+            address = window.location.search; // url de la ventana actual
+            // Objeto de tipo URLSearchParams
+            parameterList = new URLSearchParams(address);
+            // Regresa el valor del parámetro “key”
+            return parameterList.get(key);
+        }
+        console.log(getParameter("nombre"));
+    </script>
+    <center>
+    <div class="content">
+        <form action="verPersona.html" method="get">
+            <table class="tabForm">
+                <tr>
+                    <th>FORMULARIO DE REGISTRO</th>
+                </tr>
+                <tr>
+                    <td>Nombre:</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre" ></td>
+                </tr>
+                <tr>
+                    <td>Apellidos:</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="apellidos" id="apellidos" placeholder="Ingrese sus apellidos"></td>
+                </tr>
+                <tr>
+                    <td>Correo:</td>
+                </tr>
+                <tr>
+                    <td><input type="email" name="correo" id="correo" placeholder="Ingrese su correo"></td>
+            </tr>
+            <tr>
+                <td>Fecha de nacimiento:</td>
+            </tr>
+            <tr>
+                <td><input type="date" name="fecha_nacimiento" id="fecha_nacimiento"></td>
+                </tr>
+                <tr>
+                    <td>Teléfono:</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="telefono" id="telefono" placeholder="Ingrese su teléfono"></td>
+                </tr>
+                <tr>
+                    <td>Usuario:</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="usuario" id="usuario" placeholder="Ingrese su usuario"></td>
+                </tr>
+                <tr>
+                    <td>Contraseña:</td>
+                </tr>
+                <tr>
+                    <td><input type="password" name="password" id="password" placeholder="***********"></td>
+                </tr>
+                <tr>
+                    <td>Repetir password:</td>
+                </tr>
+                <tr>
+                    <td><input type="password" name="confPassword" id="confPassword" placeholder="***********"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="btnEviar" value="Enviar"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</center>
+</body>
+
+</html>

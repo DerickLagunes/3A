@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Ver Registro</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/estilos.css'>
+</head>
+
+<body>
+    <center>
+        <div class="content">
+            <h2 class="titleVerPersona"><em>Datos Registrados</em></h2>
+            <h1 id="nombre"></h1>
+            <h2 id="apellidos"></h2>
+            <p id="edad"></p>
+            <p><a href="mailto:" id="correo"></a></p>
+            <p><a href="tel:" id="telefono"></a></p>
+            <p id="usuario"></p>
+            <p id="message"></p>
+        </div>
+    </center>
+    <script>
+        getParameter = (key) => {
+            address = window.location.search; // url de la ventana actual
+            // Objeto de tipo URLSearchParams
+            parameterList = new URLSearchParams(address);
+            // Regresa el valor del parámetro “key”
+            return parameterList.get(key);
+        }
+        console.log(getParameter("nombre"));
+
+        var nombre = getParameter('nombre');
+        var apellidos = getParameter('apellidos');
+        var correo = getParameter('correo');
+        var fecha_nacimiento = new Date(getParameter('fecha_nacimiento'));
+        var telefono = getParameter('telefono');
+        var usuario = getParameter('usuario');
+        var password = getParameter('password');
+        var confPassword = getParameter('confPassword');
+
+        var fecha_actual = new Date();
+        var edad = fecha_actual.getFullYear() - fecha_nacimiento.getFullYear();
+
+        document.getElementById('nombre').innerText = nombre;
+        document.getElementById('apellidos').innerText = apellidos;
+        document.getElementById('correo').innerHTML = correo;
+        document.getElementById('edad').innerHTML = edad;
+        document.getElementById('telefono').innerHTML = telefono;
+        document.getElementById('usuario').innerHTML = usuario;
+
+        if (password != confPassword) {
+            document.getElementById('message').innerText = "Las contraseñas no coinciden";
+        }
+        if (password.length < 5) {
+            document.getElementById('message').innerText = "La contraseña es insegura";
+        }
+        if (password != confPassword && password.length < 5) {
+            document.getElementById('message').innerText = "Las contraseñas no coinciden y la contraseña es insegura";
+        }
+
+    </script>
+</body>
+
+</html>
