@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Persona</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Arial Narrow', sans-serif;
+        }
+        label {
+            color: #0f0;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="tel"],
+        input[type="password"] {
+            background-color: #000;
+            color: #0f0;
+            border: 2px solid #0f0;
+            border-radius: 5px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #0f0;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #090;
+        }
+    </style>
+</head>
+<body>
+    <form id="registroForm" action="Registro.html" method="GET">
+        <label for="nombres">Nombres:</label>
+        <input type="text" id="nombres" name="nombres" required><br>
+        
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required><br>
+        
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" required><br>
+        
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required><br>
+        
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required><br>
+        
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required><br>
+        
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" name="contraseña" required><br>
+        
+        <label for="repetirContraseña">Repetir Contraseña:</label>
+        <input type="password" id="repetirContraseña" name="repetirContraseña" required><br>
+        
+        <input type="submit" value="Registrarse">
+    </form>
+    
+    <script>
+        document.getElementById('registroForm').addEventListener('submit', function(event) {
+            const contraseña = document.getElementById('contraseña').value;
+            const repetirContraseña = document.getElementById('repetirContraseña').value;
+            
+            if (contraseña !== repetirContraseña) {
+                alert('Las contraseñas no coinciden');
+                event.preventDefault(); // Evitar envío del formulario
+            } else if (contraseña.length < 5) {
+                alert('Su contraseña es insegura');
+                event.preventDefault(); // Evitar envío del formulario
+            }
+        });
+    </script>
+</body>
+</html>
