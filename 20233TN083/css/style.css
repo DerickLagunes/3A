@@ -2,10 +2,10 @@ body{
     margin: 3%;
     background-image: url("https://png.pngtree.com/background/20210706/original/pngtree-white-silk-background-texture-picture-image_163098.jpg");
     background-size: cover;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 h1{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 50px;
     color: #E91592;
     text-align: center;
@@ -14,7 +14,6 @@ h1{
 }
 
 h2{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 25px;
     color: #ffffff;
     background-color: #E91592;
@@ -27,7 +26,6 @@ h1:hover, h2:hover {
 }
     
 p{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
     text-align: justify;
 }
@@ -61,4 +59,21 @@ p{
     margin: 50px auto;
     padding: 20px;
     box-shadow: 0 4px 8px #00000033; /* Sombra del div */
+}
+
+.button{
+    background-color: #6e9eae;
+    border: none;
+    color: #ffffff;
+    padding: 15px 1px;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 12px;
+    text-align: center;
+    display: block;
+    margin: 8px;
+}
+
+.button:hover{
+    background-color: #4f98b0;
 }

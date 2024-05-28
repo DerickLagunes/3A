@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Formulario</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/styleRegistroPersona.css'>
+</head>
+<body>
+    <section class="form-contact">
+        <header>
+            <span>
+                <h2>Formulario</h2>
+            </span>
+        </header>
+        <form action="verPersona.html" method="get" class="contact">
+            <label>Nombre(s): 
+                <input required autocomplete="off" name="nombre" type="text" maxlength="40" placeholder="Ingresa tu nombre(s)..."/>
+            </label><br>
+            <label>Apellidos: 
+                <input required autocomplete="off" name="apellidos" type="text" maxlength="50" placeholder="Ingresa tus apellidos..."/>
+            </label><br>
+            <label>Email: 
+            <input required autocomplete="off" name="email" type="email" placeholder="Ingresa tu correo..." />
+            </label><br>
+            <label>Fecha de nacimiento
+                <input required autocomplete="off" name ="fechaNacimiento" type="date"/>
+            </label><br>
+            <label>Teléfono: 
+                <input required autocomplete="off" name="telefono" type="text" maxlength="10" placeholder="Ingresa tu teléfono..."/>
+            </label><br>
+            <label>Usuario: 
+                <input required autocomplete="off" name="usuario" type="text" maxlength="20" placeholder="Ingresa tu usuario..."/>
+            </label><br>
+            <label>Contraseña: 
+                <input required autocomplete="off" name="contrasenia" type="password" maxlength="20" placeholder="Ingresa tu contraseña..."/>
+            </label><br>
+            <label>Repetir contraseña: 
+                <input required autocomplete="off" name="repetirContrasenia" type="password" maxlength="20" placeholder="Confirma tu contraseña..."/>
+            </label><br>
+            <input type="submit" value="Registrar Persona"/>
+        </form>
+    </section>
+</body>
+</html>

@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("https://png.pngtree.com/background/20210706/original/pngtree-white-silk-background-texture-picture-image_163098.jpg");
+    background-size:cover;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h2{
+    color: #ffffff;
+    text-align: center;
+    font-size: 25px;
+}
+
+.form-contact{
+    background-color: #f7f5f2;
+    width: 400px;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 5%;
+    padding-bottom: 1%;
+    transform: translate(-50%,-50%);
+    box-shadow: 7px 13px 37px #666565cc;
+}
+
+header{
+    width: 100%;
+    background-color: #E91592;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+header span{
+    display: flexbox;
+    text-align:center;
+    padding: 0.8rem;
+}
+
+.contact{
+    padding: .5rem;
+    overflow: hidden;
+    color: #000000;
+    font-weight: 300;
+}
+
+.contact label, .contact input, .contact textarea{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.contact label{
+    font-weight: 700;
+}
+
+.contact input:not([type='submit']), .contact textarea{
+    border: none;
+    border-bottom: 2px solid #E91592;
+    margin-bottom: 2px;
+    font-size: 14px;
+    outline: none;
+    color: #000000;
+}
+
+.contact textarea{
+    min-height: 100px;
+}
+
+input[type='submit']{
+    padding: 8px;
+    border: none;
+    margin: 2px;
+    background-color: #E91592;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+}

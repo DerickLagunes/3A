@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("https://png.pngtree.com/background/20210706/original/pngtree-white-silk-background-texture-picture-image_163098.jpg");
+    background-size:cover;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.box{
+    background-color: #f7f5f2;
+    width: 400px;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 2%;
+    transform: translate(-50%,-50%);
+    box-shadow: 7px 13px 37px #666565cc;
+}
+
+header{
+    width: 100%;
+    background-color: #E91592;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+header span{
+    display: flexbox;
+    text-align:center;
+    padding: 0.8rem;
+}
+
+.container{
+    padding: .9rem;
+    overflow: hidden;
+    color: #000000;
+}
+#email, #telefono, #edad, #mensaje, p{
+    background-color: #e2e2e2;
+}
+h1,h2{
+    text-align: center;
+}
+
+h3{
+    margin: 35px;
+    font-size: 50px;
+    color: #6e9eae;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    text-shadow: 2px 2px 5px #81cfee4d; /* Sombra para el h1 */
+}
+
+.button{
+    background-color: #E91592;
+    border: none;
+    color: #ffffff;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 12px;
+    text-align: center;
+    position:absolute;
+    bottom: 10px; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.button:hover{
+    background-color: #feb2cd;
+}
