@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Persona</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .container h1, .container h2 {
+            margin: 10px 0;
+        }
+        .container p {
+            margin: 10px 0;
+        }
+        .container a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="nombres"></h1>
+        <h2 id="apellidos"></h2>
+        <p>Correo: <a id="correo" href="#"></a></p>
+        <p>Teléfono: <a id="telefono" href="#"></a></p>
+        <p>Edad: <span id="edad"></span> años</p>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1);
+            const regex = /([^&=]+)=([^&]*)/g;
+            let m;
+            while (m = regex.exec(queryString)) {
+                params[decodeURIComponent(m[1])] = decodeURIComponent(m[2].replace(/\+/g, ' '));
+            }
+            return params;
+        }
+
+        function calculateAge(birthDate) {
+            const today = new Date();
+            const birth = new Date(birthDate);
+            let age = today.getFullYear() - birth.getFullYear();
+            const m = today.getMonth() - birth.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+                age--;
+            }
+            return age;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = getQueryParams();
+
+            document.getElementById('nombres').textContent = params.nombres || '';
+            document.getElementById('apellidos').textContent = params.apellidos || '';
+            document.getElementById('correo').textContent = params.correo || '';
+            document.getElementById('correo').href = `mailto:${params.correo}`;
+            document.getElementById('telefono').textContent = params.telefono || '';
+            document.getElementById('telefono').href = `tel:${params.telefono}`;
+            document.getElementById('edad').textContent = calculateAge(params.fechaNacimiento) || '';
+        });
+    </script>
+</body>
+</html>

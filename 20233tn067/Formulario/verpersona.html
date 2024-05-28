@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mostrar Informacion</title>
+    <script>
+
+        window.onload = function() {
+           
+            const params = new URLSearchParams(window.location.search);
+
+            const nombres = params.get('nombres');
+            const apellidos = params.get('apellidos');
+            const correo = params.get('correo');
+            const fechaNacimiento = new Date(params.get('fechaNacimiento'));
+            const telefono = params.get('telefono');
+            const contrasena = params.get('contrasena');
+            const repetirContrasena = params.get('repetirContrasena');
+
+            document.getElementById('nombres').innerText = nombres;
+            document.getElementById('apellidos').innerText = apellidos;
+            document.getElementById('correo').innerHTML = '<a href="mailto:' + correo + '">' + correo + '</a>';
+            document.getElementById('telefono').innerHTML = '<a href="tel:' + telefono + '">' + telefono + '</a>';
+
+            const edad = new Date().getFullYear() - fechaNacimiento.getFullYear();
+            document.getElementById('edad').innerText = edad + ' años';
+
+            if (contrasena !== repetirContrasena) {
+                document.getElementById('contrasenaError').innerText = 'Las contraseñas no coinciden';
+            } else {
+                document.getElementById('contrasenaError').innerText = '';
+
+                if (contrasena.length < 5) {
+                    document.getElementById('contrasenaError').innerText += 'Tu contraseña es insegura';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Se muestra Informacion</h1>
+    <h1>Nombre:</h1>
+    <h1 id="nombres"></h1>
+    <h2>Apellidos:</h2>
+    <h2 id="apellidos"></h2>
+    <p>Edad:</p>
+    <p id="edad"></p>
+    <p>Sugerencia Contraseña:</p>
+    <p id="contrasenaError"></p>
+    <p>Telefono:</p>
+    <p id="telefono"></p>
+    <p>Correo:</p>
+    <p id="correo"></p>
+
+</body>
+</html>
+
