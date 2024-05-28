@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/estiloFormulario.css'>
+    <title>Ver Persona</title>
+</head>
+<script>
+    function mostrarInformacion() {
+        const urlParametros = new URLSearchParams(window.location.search);
+        const nombres = urlParametros.get('nombres');
+        const apellidos = urlParametros.get('apellidos');
+        const email = urlParametros.get('email');
+        const fechaNacimiento = urlParametros.get('fechaNacimiento');
+        const telefono = urlParametros.get('telefono');
+        const usuario = urlParametros.get('usuario');
+        const contrasena = urlParametros.get('contrasena');
+        const repetirContrasena = urlParametros.get('repetirContrasena');
+        const pElement = document.getElementById('mensaje');
+
+        if (contrasena !== repetirContrasena) {
+            pElement.textContent = "Las contraseñas no coinciden";
+            return;
+        }
+
+        if (contrasena.length < 5) {
+            pElement.textContent = "AVISO: Tu contraseña es insegura";
+            return;
+        }
+
+        document.getElementById('nombres').textContent = nombres;
+        document.getElementById('apellidos').textContent = apellidos;
+        document.getElementById('correo').innerHTML = `<a href="mailto:${email}">${email}</a>`;
+        document.getElementById('telefono').innerHTML = `<a href="tel:${telefono}">${telefono}</a>`;
+
+        const nacimiento = new Date(fechaNacimiento);
+        const edad = new Date().getFullYear() - nacimiento.getFullYear();
+        document.getElementById('edad').textContent = `Edad: ${edad} años`;
+    }
+</script>
+<body onload="mostrarInformacion()">
+    <h1 id="nombres"></h1>
+    <h2 id="apellidos"></h2>
+    <p id="correo"></p>
+    <p id="telefono"></p>
+    <p id="edad"></p>
+    <p id="mensaje"></p>
+</body>
+</html>
