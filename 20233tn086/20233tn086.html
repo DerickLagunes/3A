@@ -101,6 +101,49 @@
         </div>
     </section>
 
+    <section class="w-full flex flex-col items-center py-12">
+        <h2 class="text-sky-700 text-2xl lg:text-4xl mb-8">Formulario de Registro</h2>
+        <form id="registroForm" action="verPersona.html" method="get" class="w-11/12 lg:w-1/2 bg-gray-800 p-8 rounded-lg shadow-md">
+            <div class="mb-4">
+                <label for="nombres" class="block text-sky-700 text-lg mb-2">Nombres:</label>
+                <input type="text" id="nombres" name="nombres" required class="w-full p-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:border-sky-700 focus:outline-none">
+            </div>
+            <div class="mb-4">
+                <label for="apellidos" class="block text-sky-700 text-lg mb-2">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required class="w-full p-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:border-sky-700 focus:outline-none">
+            </div>
+            <div class="mb-4">
+                <label for="correo" class="block text-sky-700 text-lg mb-2">Correo:</label>
+                <input type="email" id="correo" name="correo" required class="w-full p-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:border-sky-700 focus:outline-none">
+            </div>
+            <div class="mb-4">
+                <label for="fechaNacimiento" class="block text-sky-700 text-lg mb-2">Fecha de Nacimiento:</label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required class="w-full p-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:border-sky-700 focus:outline-none">
+            </div>
+            <div class="mb-4">
+                <label for="telefono" class="block text-sky-700 text-lg mb-2">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required class="w-full p-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:border-sky-700 focus:outline-none">
+            </div>
+            <div class="mb-4">
+                <label for="usuario" class="block text-sky-700 text-lg mb-2">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" required class="w-full p-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:border-sky-700 focus:outline-none">
+            </div>
+            <div class="mb-4">
+                <label for="contrasena" class="block text-sky-700 text-lg mb-2">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required class="w-full p-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:border-sky-700 focus:outline-none">
+            </div>
+            <div class="mb-4">
+                <label for="repetirContrasena" class="block text-sky-700 text-lg mb-2">Repetir Contraseña:</label>
+                <input type="password" id="repetirContrasena" name="repetirContrasena" required class="w-full p-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:border-sky-700 focus:outline-none">
+            </div>
+            <div class="text-center">
+                <button type="submit" class="bg-sky-700 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none">Registrar</button>
+            </div>
+            <p id="mensaje" class="text-red-500 mt-4"></p>
+        </form>
+    </section>
+
     <script src="script.js"></script>
+    <script src="form.js"></script>
 </body>
 </html>
