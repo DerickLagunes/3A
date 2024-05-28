@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registro de examen</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <form id="registroForm">
+        <h1>Registro de Usuario</h1>
+        <label>Nombre/Nombres: <input name="nombrePersona" type="text" maxlength="20" placeholder="Ingresa tu nombre/nombres:" required></label>
+        <br>
+        <label>Apellidos: <input name="apellidosPersona" type="text" maxlength="20" placeholder="Ingresa tus apellidos:" required></label>
+        <br>
+        <label>Email: <input name="emailPersona" type="email" maxlength="50" placeholder="Ingresa email" required></label>
+        <br>
+        <label>Fecha de Nacimiento: <input name="fechaNacimiento" type="date" required></label>
+        <br>
+        <label>Numero de telefono: <input name="numeroTelefono" type="number" placeholder="Ingresa tu # de telefono" required></label>
+        <br>
+        <label>Contraseña: <input name="contraseñaUsuario" type="password" placeholder="Ingresa contraseña" required></label>
+        <br>
+        <label>Confirmar Contraseña: <input name="confirmarContraseña" type="password" placeholder="Ingresa contraseña" required></label>
+        <br>
+        <p id="errorMensaje" style="color:rgb(255, 0, 0);"></p>
+        <input type="submit" value="Registrar datos">
+    </form>
+
+    <div id="registroCompleto" style="display:none;">
+        <h1>Registro Completo</h1>
+        <ul>
+            <li>Nombre: <span id="nombre"></span></li>
+            <li>Apellidos: <span id="apellidos"></span></li>
+            <li>Email: <span id="email"></span></li>
+            <li>Fecha de Nacimiento: <span id="fechaNacimiento"></span></li>
+            <li>Teléfono: <span id="telefono"></span></li>
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById("registroForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementsByName("nombrePersona")[0].value;
+            const apellidos = document.getElementsByName("apellidosPersona")[0].value;
+            const email = document.getElementsByName("emailPersona")[0].value;
+            const fechaNacimiento = document.getElementsByName("fechaNacimiento")[0].value;
+            const telefono = document.getElementsByName("numeroTelefono")[0].value;
+            const contraseña = document.getElementsByName("contraseñaUsuario")[0].value;
+            const confirmarContraseña = document.getElementsByName("confirmarContraseña")[0].value;
+
+            if (contraseña !== confirmarContraseña) {
+                document.getElementById("errorMensaje").innerText = "Las contraseñas no coinciden";
+                return;
+            } else if (contraseña.length < 5) {
+                document.getElementById("errorMensaje").innerText = "Tu contraseña es insegura (menos de 5 caracteres)";
+                return;
+            } else {
+                document.getElementById("errorMensaje").innerText = ""; 
+            }
+
+            document.getElementById("nombre").textContent = nombre;
+            document.getElementById("apellidos").textContent = apellidos;
+            document.getElementById("email").textContent = email;
+            document.getElementById("fechaNacimiento").textContent = fechaNacimiento;
+            document.getElementById("telefono").textContent = telefono;
+
+            document.getElementById("registroForm").style.display = 'none';
+            document.getElementById("registroCompleto").style.display = 'block';
+        });
+    </script>
+</body>
+</html>
