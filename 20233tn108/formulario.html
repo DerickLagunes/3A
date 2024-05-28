@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Persona</title>
+    <link rel="stylesheet" href="form.css">
+    <script>
+        function mostrarInformacion(event) {
+            event.preventDefault();
+            
+            const form = new FormData(event.target);
+            const nombre = form.get('nombre');
+            const apellidos = form.get('apellidos');
+            const correo = form.get('correo');
+            const fechaNacimiento = new Date(form.get('fecha_nacimiento'));
+            const telefono = form.get('telefono');
+            const contrasena = form.get('contrasena');
+            const repetirContrasena = form.get('repetir_contrasena');
+            
+            const resultado = document.getElementById('resultado');
+            resultado.innerHTML = '';
+
+            // Verifica si las contraseñas coinciden
+            if (contrasena !== repetirContrasena) {
+                resultado.innerHTML = '<p>Las contraseñas no coinciden</p>';
+                return;
+            }
+
+            // Verifica si la contraseña es lo suficientemente segura
+            if (contrasena.length < 5) {
+                resultado.innerHTML = '<p>Su contraseña es insegura</p>';
+                return;
+            }
+
+            // Calcula la edad del usuario
+            const hoy = new Date();
+            let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+            const mes = hoy.getMonth() - fechaNacimiento.getMonth();
+            if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+                edad--;
+            }
+
+            // Muestra la información del usuario
+            resultado.innerHTML = `
+                <h1>${nombre}</h1>
+                <h2>${apellidos}</h2>
+                <a href="mailto:${correo}">${correo}</a><br>
+                <a href="tel:${telefono}">${telefono}</a><br>
+                <p>Edad: ${edad} años</p>
+            `;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="mostrarInformacion(event)" class="form">
+            <!-- Campo de entrada para el nombre -->
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <!-- Campo de entrada para los apellidos -->
+            <div class="form-group">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required>
+            </div>
+            <!-- Campo de entrada para el correo electrónico -->
+            <div class="form-group">
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+            <!-- Campo de entrada para la fecha de nacimiento -->
+            <div class="form-group">
+                <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+            </div>
+            <!-- Campo de entrada para el teléfono -->
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+            <!-- Campo de entrada para el usuario -->
+            <div class="form-group">
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" required>
+            </div>
+            <!-- Campo de entrada para la contraseña -->
+            <div class="form-group">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+            </div>
+            <!-- Campo de entrada para repetir la contraseña -->
+            <div class="form-group">
+                <label for="repetir_contrasena">Repetir Contraseña:</label>
+                <input type="password" id="repetir_contrasena" name="repetir_contrasena" required>
+            </div>
+            <!-- Botón de envío centrado -->
+            <div class="submit-container">
+                <input type="submit" value="Registrar">
+            </div>
+        </form>
+        <!-- Div para mostrar el resultado -->
+        <div id="resultado"></div>
+    </div>
+</body>
+</html>

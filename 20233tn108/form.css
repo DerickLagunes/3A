@@ -1,0 +1,92 @@
+/* Aplicar box-sizing y estilos base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo del body para centrar el contenido */
+body {
+    background-color: #20B2AA; /* Fondo principal azul verdoso */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px; /* Añadir padding para que el formulario no toque los bordes de la pantalla */
+}
+
+/* Contenedor principal para centrar el formulario */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px; /* Limitar el ancho máximo del formulario */
+}
+
+/* Estilo del formulario */
+.form {
+    background: rgba(0, 0, 0, 0.7); /* Fondo negro con transparencia */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: 100%;
+}
+
+/* Grupo de campos del formulario */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Estilo de las etiquetas */
+.form label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Estilo de los campos de entrada */
+.form input[type="text"], 
+.form input[type="email"], 
+.form input[type="date"], 
+.form input[type="tel"], 
+.form input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Contenedor para centrar el botón de envío */
+.submit-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Estilo del botón de envío */
+.form input[type="submit"] {
+    background-color: #008CBA; /* Color del botón */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto al pasar el mouse sobre el botón de envío */
+.form input[type="submit"]:hover {
+    background-color: #005f6b; /* Efecto al pasar el mouse */
+}
+
+/* Estilo del div para mostrar el resultado */
+#resultado {
+    margin-top: 20px;
+    color: #fff;
+    text-align: center;
+}
