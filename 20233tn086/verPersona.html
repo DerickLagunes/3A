@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de la Persona</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                borderRadius: {
+                    'none': '0',
+                    'sm': '0.125rem',
+                    DEFAULT: '0.25rem',
+                    DEFAULT: '4px',
+                    'md': '0.375rem',
+                    'lg': '0.5rem',
+                    'full': '500px',
+                    'large': '12px',
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <style>
+        .itim-regular {
+            font-family: "Itim", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+        * {
+            font-family: itim;
+        }
+    </style>
+</head>
+<body class="bg-zinc-800 flex items-center justify-center min-h-screen">
+    <div id="informacionPersona" class="bg-gray-900 text-white p-8 rounded-lg shadow-md w-11/12 lg:w-1/2 text-center"></div>
+    <script>
+        function getParameterByName(name) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var url = window.location.href;
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+            var results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        function calcularEdad(fechaNacimiento) {
+            var hoy = new Date();
+            var fechaNac = new Date(fechaNacimiento);
+            var edad = hoy.getFullYear() - fechaNac.getFullYear();
+            var mes = hoy.getMonth() - fechaNac.getMonth();
+            if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNac.getDate())) {
+                edad--;
+            }
+            return edad;
+        }
+
+        var nombres = getParameterByName('nombres');
+        var apellidos = getParameterByName('apellidos');
+        var correo = getParameterByName('correo');
+        var fechaNacimiento = getParameterByName('fechaNacimiento');
+        var telefono = getParameterByName('telefono');
+
+        var edad = calcularEdad(fechaNacimiento);
+
+        var infoDiv = document.getElementById('informacionPersona');
+
+        if (nombres && apellidos && correo && fechaNacimiento && telefono) {
+            infoDiv.innerHTML = `
+                <h1 class="text-2xl lg:text-4xl text-sky-700 mb-4">${nombres}</h1>
+                <h2 class="text-xl lg:text-3xl text-sky-500 mb-4">${apellidos}</h2>
+                <a href="mailto:${correo}" class="text-lg lg:text-2xl text-sky-400 hover:text-sky-300 mb-4 block">${correo}</a>
+                <a href="tel:${telefono}" class="text-lg lg:text-2xl text-sky-400 hover:text-sky-300 mb-4 block">${telefono}</a>
+                <p class="text-lg lg:text-2xl text-sky-400">Edad: ${edad} años</p>
+            `;
+        } else {
+            infoDiv.innerHTML = '<p class="text-red-500">Información incompleta</p>';
+        }
+    </script>
+</body>
+</html>

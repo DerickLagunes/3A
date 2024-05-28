@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registro</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/validarRegistro.js"></script>
+</head>
+<body>
+    <h1>Registro</h1>
+    <form id="registroForm" action="verPersona.html" method="get">
+        <label>Nombre
+            <input name="Nombre" type="text" placeholder="Ingresa tu nombre" required>
+            <br>
+        </label>
+        <label>Apellido
+            <input name="Apellido" type="text" placeholder="Ingresa tu apellido" required>
+            <br>
+        </label>
+        <label>Correo
+            <input name="Correo" type="email" placeholder="Ingresa tu correo" required>
+            <br>
+        </label>
+        <label>Fecha de nacimiento
+            <input name="Fecha" type="date" required>
+            <br>
+        </label>
+        <label>Teléfono
+            <input name="Telefono" type="text" placeholder="Teléfono" required>
+            <br>
+        </label>
+        <label>Usuario
+            <input name="usuario" type="text" placeholder="Ingresa tu usuario" required>
+            <br>
+        </label>
+        <label>Contraseña
+            <input name="contrasena" type="password" required>
+            <br>
+        </label>
+        <label>Confirmar Contraseña
+            <input name="confirmar" type="password" required>
+            <br>
+        </label>
+        <p id="mensajeError" style="color: red;"></p>
+        <br>
+        <input type="submit" value="Registrar datos">
+    </form>
+</body>
+</html>
+
