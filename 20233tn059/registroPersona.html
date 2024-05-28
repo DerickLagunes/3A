@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario GET</title>
+    <script src="./main.js"></script>
+  </head>
+  <body>
+    <div>
+      <form action="./verPersona.html" method="get">
+        <label>
+          Nombre
+          <input type="text" name="nombre" id="nombre" />
+        </label>
+        <label>
+          Apellido
+          <input type="text" name="apellido" />
+        </label>
+        <label>
+          Correo
+          <input type="email" name="correo" />
+        </label>
+        <label>
+          Fecha nacimiento
+          <input type="date" name="date" id="date" />
+        </label>
+        <label>
+          Telefono
+          <input type="text" name="tel" id="" />
+        </label>
+        <label>
+          Usuario:
+          <input type="text" name="user" />
+        </label>
+        <label>
+          Contrasena
+          <input type="password" name="pass" />
+        </label>
+        <label>
+          Contrasena
+          <input type="password" name="passCon" />
+        </label>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+    <style>
+      div {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        flex-direction: row;
+      }
+    </style>
+  </body>
+</html>
