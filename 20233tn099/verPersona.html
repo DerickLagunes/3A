@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información del Usuario</title>
+</head>
+<body>
+    <h1>Información del Usuario</h1>
+    <div id="infoUsuario">
+    </div>
+
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const nombres = urlParams.get('nombres');
+        const apellidos = urlParams.get('apellidos');
+        const correo = urlParams.get('correo');
+        const fechaNacimiento = urlParams.get('fecha_nacimiento');
+        const telefono = urlParams.get('telefono');
+        const contrasena = urlParams.get('contrasena');
+        const confirmarContrasena = urlParams.get('confirmar_contrasena');
+
+        function calcularEdad(fechaNacimiento) {
+            var hoy = new Date();
+            var cumpleanos = new Date(fechaNacimiento);
+            var edad = hoy.getFullYear() - cumpleanos.getFullYear();
+            var mes = hoy.getMonth() - cumpleanos.getMonth();
+
+            if (mes < 0 || (mes === 0 && hoy.getDate() < cumpleanos.getDate())) {
+                edad--;
+            }
+            return edad;
+        }
+
+        if (contrasena !== confirmarContrasena) {
+            document.getElementById('infoUsuario').innerHTML = "<p>Las contraseñas no coinciden</p>";
+        } else if (contrasena.length < 5) {
+            document.getElementById('infoUsuario').innerHTML = "<p>Su contraseña es insegura (menos de 5 caracteres)</p>";
+        } else {
+            const edad = calcularEdad(fechaNacimiento);
+
+            document.getElementById('infoUsuario').innerHTML = `
+                <h1>${nombres}</h1>
+                <h2>${apellidos}</h2>
+                <p>Correo: <a href="mailto:${correo}">${correo}</a></p>
+                <p>Teléfono: <a href="tel:${telefono}">${telefono}</a></p>
+                <p>Edad: ${edad} años</p>
+            `;
+        }
+    </script>
+</body>
+</html>

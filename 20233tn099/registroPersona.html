@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Persona</title>
+</head>
+<body>
+    <h2>Registro de Persona</h2>
+    <form action="verPersona.html" method="GET">
+        <label for="nombres">Nombres:</label>
+        <input type="text" id="nombres" name="nombres" required><br><br>
+        
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required><br><br>
+        
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" required><br><br>
+        
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br><br>
+        
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Formato: 123-456-7890" required><br><br>
+        
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required><br><br>
+        
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required><br><br>
+        
+        <label for="confirmar_contrasena">Repetir Contraseña:</label>
+        <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" required><br><br>
+        
+        <input type="submit" value="Registrarse">
+    </form>
+</body>
+</html>
