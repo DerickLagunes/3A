@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registrarse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>FORMULARIO</h1>
+    <h2>Estás en la página de registrar persona</h2>
+    <form id="formulario" action="verPersona.html" method="get" onsubmit="return validacion()">
+        <label>Nombres: <input name="nombres2" id="nombres" type="text"></label>
+        <br>
+        <label>Apellidos: <input name="apellidos2" id="apellidos" type="text"></label>
+        <br>
+        <label>Correo: <input name="correo2" id="correo" type="email"></label>
+        <br>
+        <label>Fecha de nacimiento: <input id="nacimiento" type="date"></label>
+        <br>
+        <label>Teléfono: <input name="telefono2" id="telefono" type="text"></label>
+        <br>
+        <label>Usuario: <input id="usuario" type="text"></label>
+        <br>
+        <label>Contraseña: <input id="contraseña" type="password"></label>
+        <br>
+        <label>Repetir contraseña: <input id="contraseña_repetida" type="password"></label>
+        <br>
+        <input id="boton" type="submit">
+        <p id="respuesta"> </p>
+    </form>
+    <script>
+        function validacion() {
+            var contraseña = document.getElementById('contraseña').value;
+            var contraseña_repetida = document.getElementById('contraseña_repetida').value;
+
+            if (contraseña != contraseña_repetida) {
+                document.getElementById('respuesta').innerText = 'Las contraseñas no coinciden, intentelo de nuevo.';
+                return false;
+            }
+            if (contraseña.length <= 5) {
+                document.getElementById('respuesta').innerText = 'La contraseña no es segura (debe tener más de 5 caracteres), intentelo de nuevo.';
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>

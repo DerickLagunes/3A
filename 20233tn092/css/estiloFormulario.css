@@ -1,16 +1,16 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #FFF5F5; /* Fondo rosado claro */
-    color: #663333; /* Texto marrón rojizo */
+    background-color: #FFF5F5; 
+    color: #663333; 
     text-align: center;
 }
 
-/* Estilos para el formulario */
+
 form {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #FFE6E6; /* Fondo rosado */
+    background-color: #FFE6E6;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: left;
@@ -33,27 +33,27 @@ input[type="date"],
 input[type="tel"] {
     width: 100%;
     padding: 8px;
-    border: 1px solid #FFB3B3; /* Borde rosado */
+    border: 1px solid #FFB3B3;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
-/* Estilos para el contenido */
+
 #contenido {
     max-width: 400px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #FFE6E6; /* Fondo rosado */
+    background-color: #FFE6E6;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1, h2 {
-    color: #FF6666; /* Títulos en rosa */
+    color: #FF6666; 
 }
 
 a {
-    color: #FF9999; /* Enlaces en rosa claro */
+    color: #FF9999; 
     text-decoration: none;
 }
 
@@ -61,14 +61,14 @@ a:hover {
     text-decoration: underline;
 }
 input[type="submit"] {
-    background-color: #FFD9D9; /* Fondo rosado claro */
-    color: #663333; /* Texto marrón rojizo */
-    padding: 12px 24px; /* Aumentar el relleno */
-    border: 2px solid #FFB3B3; /* Borde rosado */
-    border-radius: 20px; /* Bordes redondeados */
-    font-size: 16px; /* Aumentar el tamaño de fuente */
+    background-color: #FFD9D9; 
+    color: #663333; 
+    padding: 12px 24px; 
+    border: 2px solid #FFB3B3; 
+    border-radius: 20px; 
+    font-size: 16px; 
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Transición suave */
-    margin: 0 auto; /* Margen horizontal automático */
-    display: block; /* Convierte el botón en un elemento de bloque */
+    transition: background-color 0.3s ease; 
+    margin: 0 auto; 
+    display: block; 
 }
