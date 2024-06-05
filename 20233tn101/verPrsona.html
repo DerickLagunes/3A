@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información Usuario</title>
+</head>
+<body>
+    <h2>Información Usuario</h2>
+    <p id="mensaje"></p>
+    <div id="infoUsuario"></div>
+
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            let nombres = urlParams.get('nombres');
+            let apellidos = urlParams.get('apellidos');
+            let correo = urlParams.get('correo');
+            let fechaNacimiento = urlParams.get('fecha_nacimiento');
+            let telefono = urlParams.get('telefono');
+            let contrasena = urlParams.get('contrasena');
+            let repetirContrasena = urlParams.get('repetir_contrasena');
+
+            let mensaje = '';
+            if (contrasena !== repetirContrasena) {
+                mensaje = 'Las contraseñas no coinciden';
+            } else if (contrasena.length < 5) {
+                mensaje = 'La contraseña es insegura';
+            } else {
+                let nacimiento = new Date(fechaNacimiento);
+                let edad = new Date().getFullYear() - nacimiento.getFullYear();
+                let mesActual = new Date().getMonth();
+                let mesNacimiento = nacimiento.getMonth();
+                let diaActual = new Date().getDate();
+                let diaNacimiento = nacimiento.getDate();
+
+                if (mesNacimiento > mesActual || (mesNacimiento === mesActual && diaNacimiento > diaActual)) {
+                    edad--;
+                }
+
+                let infoUsuario = `
+                    <h1>${nombres}</h1>
+                    <h2>${apellidos}</h2>
+                    <a href="mailto:${correo}">${correo}</a><br>
+                    <a href="tel:${telefono}">${telefono}</a><br>
+                    <p>Edad: ${edad} años</p>
+                `;
+                document.getElementById('infoUsuario').innerHTML = infoUsuario;
+            }
+
+            document.getElementById('mensaje').innerText = mensaje;
+        }
+    </script>
+</body>
+</html>
