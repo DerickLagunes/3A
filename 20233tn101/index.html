@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXAMEN</title>
+</head>
+<body>
+    <h1>Imagenes al azar</h1>
+    <button id="verImangenButton">Tirar al azar</button>
+    <br><br>
+    <img src="ruta1.jpg">
+    <img src="ruta2.jpg">
+    <img src="ruta3.jpg">
+    <img src="ruta4.jpg">
+    <script>
+        var verImangenButton = ["ruta1.jpg", "ruta2.png", "ruta3.jpg", "ruta4.png"];
+        function alzar(){
+            let randomIndex = Math.floor(Math.random() * 4);
+            let imagePath = imagePaths[randomIndex];
+            let img = azar2();
+            if (img !== -1) {
+                let ruta1 = document.getElementById("imagen" + (img + 1));
+                ruta1.src = imagePath;
+            } else {
+                alert("Todas las imágenes ya han sido mostradas.");
+            }
+        }
+
+        function azar2() {
+            for (var i = 1; i <= 4; i++) {
+                let ruta1 = document.getElementById("imagen" + i);
+                if (!ruta1.src) {
+                    return i - 1;
+                }
+            }
+        return -1;
+}       document.getElementById("verImangenButton").addEventListener("click", showRandomImage);
+    </script>
+</body>
+</html>

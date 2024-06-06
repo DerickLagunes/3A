@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evelyn Martinez</title>
+    <script  src="./ef.css">
+
+    </script>
+</head>
+<body>
+    <div class="design">
+        <form method="get" action="./verPersona.html" id="formulario">
+            <label for="nombre de la mascota:">
+                Nombre de su mascota:
+                <input type="text" name="nombre" id="nombres">
+            </label>
+            <br>
+            <label for="tipo">
+                Tipo de mascota:
+                <input type="text" name="tipo" id="Tipo de mascota">
+            </label>
+            <br>
+            <label for="edad">
+                Edad: 
+                <input type="number" name="edad" id="Edad">
+            </label>
+            <br>
+            <label for="comida">
+                Comida favorita:
+                <input type="text" name="comida" id="Comida favorita">
+            </label>
+            <br>
+            <label for="email">
+                Correo electrónico del dueño:
+                <input type="email" id="email" name="email" required>
+            </label>
+            <br>
+            <button type="submit">Enviar formulario</button>
+        </form>
+    </div>
+    <script>
+        function registrarMascota() {
+            const nombre = document.getElementById('Nombre de su mascota').value;
+            const tipo = document.getElementById('Tipo de mascota').value;
+            const edad = document.getElementById('Edad de la mascota').value;
+            const comida = document.getElementById('Comida favorita').value;
+            const Correo = document.getElementById('Correo electronico').value;
+            
+            const table = document.getElementById('registroMasc').getElementsByTagName('masc')[0];
+            const newRow = table.insertRow();
+            
+            const col1 = newRow.insertCell(0);
+            const col2 = newRow.insertCell(1);
+            const col3 = newRow.insertCell(2);
+            const col4 = newRow.insertCell(3);
+            const col5 = newRow.insertCell(4);
+            
+            col1.textContent = nombre;
+            col2.textContent = tipo;
+            col3.textContent = edad;
+            col4.textContent = comida;
+            col5.textContent = Correo;
+        }
+    </script>
+</body>
+</html>
